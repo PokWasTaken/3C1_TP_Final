@@ -1,42 +1,218 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Champions - Wiki League Of Legends</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="normalize/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/champions.css">
     <script defer src="js/main.js"></script>
 </head>
+
 <body>
-    <header id="main-header"></header>
-    
+    <header id="header">
+    </header>
+
     <main>
-        <!-- Your champions content here -->
+        <div class="hero">
+            <h1 class="section-titre">Champions</h1>
+            <h2 class="hero-sous-tire">Plus de 170 champions à découvrir</h2>
+            <h3 class="hero-sous-titre">Descriptions, Tier Lists, Meta et autres!</h3>
+        </div>
+        <div class="a-la-une">
+            <h2 class="a-la-une-titre">Champion à la une</h2>
+            <div class="Yasuo-une-carte"></div>
+            <h5 class="voir-tous">Voir tous</h5>
+        </div>
+        <div class="tier-list">
+            <h1 class="tier-list-titre">Tier List</h1>
+            <div class="tier-list-carte">
+                <div class="tier-S"></div>
+                <div class="tier-A"></div>
+                <div class="tier-B"></div>
+            </div>
+            <h5 class="voir-tous">Voir tous</h5>
+        </div>
+        <div class="meta">
+            <h2 class="section-titre">Analyse Meta</h2>
+            <div class="meta-conteneur">
+                <div class="ban-rate-carte">
+                    <h3>Ban rate %</h3>
+                    <div class="ban-rate-item">
+                        <span class="champion-nom">Zed</span>
+                        <span class="ban-rate-pourcentage">29.2%</span>
+                    </div>
+                    <div class="ban-rate-item">
+                        <span class="champion-nom">Yasuo</span>
+                        <span class="ban-rate-pourcentage">18.2%</span>
+                    </div>
+                    <div class="ban-rate-item">
+                        <span class="champion-nom">Darius</span>
+                        <span class="ban-rate-pourcentage">14.7%</span>
+                    </div>
+                </div>
+                <div class="win-rate-carte">
+                    <h3>Win rate %</h3>
+                    <div class="win-rate-item">
+                        <span class="champion-nom">Garen (Top)</span>
+                        <span class="win-rate-pourcentage">50.89%</span>
+                    </div>
+                    <div class="win-rate-item">
+                        <span class="champion-nom">Leona (Sup)</span>
+                        <span class="win-rate-pourcentage">50.75%</span>
+                    </div>
+                    <div class="win-rate-item">
+                        <span class="champion-nom">Thresh (Sup)</span>
+                        <span class="win-rate-pourcentage">50.59%</span>
+                    </div>
+                </div>
+                <div class="pick-rate-carte">
+                    <h3>Pick rate %</h3>
+                    <div class="pick-rate-item">
+                        <span class="champion-nom">Yasuo (Mid)</span>
+                        <span class="pick-rate-pourcentage">12.9%</span>
+                    </div>
+                    <div class="pick-rate-item">
+                        <span class="champion-nom">Thresh (Sup)</span>
+                        <span class="pick-rate-pourcentage">7.5%</span>
+                    </div>
+                    <div class="pick-rate-item">
+                        <span class="champion-nom">Ahri (Mid)</span>
+                        <span class="pick-rate-pourcentage">7.1%</span>
+                    </div>
+                </div>
+            </div>
+            <h5 class="voir-tous">Voir tous</h5>
+        </div>
+        <div class="champions-grid">
+            <h2 class="section-titre"></h2>
+            <div class="champions-carte"> <!-- champion carte 1  -->
+                <img src="img/champions/darius.png" alt="darius">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Darius</h3>
+                    <span class="champion-role">TOP</span>
+                    <p class="champion-winrate">Win rate: <strong>49.49%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 2  -->
+                <img src="img/champions/ahri.png" alt="ahri">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Ahri</h3>
+                    <span class="champion-role">MID</span>
+                    <p class="champion-winrate">Win rate: <strong>49.90%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 3  -->
+                <img src="img/champions/garen.png" alt="garen">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Garen</h3>
+                    <span class="champion-role">TOP</span>
+                    <p class="champion-winrate">Win rate: <strong>50.89%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 4  -->
+                <img src="img/champions/leona.png" alt="leona">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Leona</h3>
+                    <span class="champion-role">SUP</span>
+                    <p class="champion-winrate">Win rate: <strong>50.75%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 5  -->
+                <img src="img/champions/lux.png" alt="lux">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Lux</h3>
+                    <span class="champion-role">MID</span>
+                    <p class="champion-winrate">Win rate: <strong>49.63%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 6  -->
+                <img src="img/champions/thresh.png" alt="thresh">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Thresh</h3>
+                    <span class="champion-role">SUP</span>
+                    <p class="champion-winrate">Win rate: <strong>50.59%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 7  -->
+                <img src="img/champions/yasuo.png" alt="yasuo">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Yasuo</h3>
+                    <span class="champion-role">MID</span>
+                    <p class="champion-winrate">Win rate: <strong>51.52%</strong></p>
+                </div>
+            </div>
+            <div class="champions-carte"> <!-- champion carte 8  -->
+                <img src="img/champions/zed.png" alt="zed">
+                <div class="champion-info">
+                    <h3 class="champion-nom">Zed</h3>
+                    <span class="champion-role">MID</span>
+                    <p class="champion-winrate">Win rate: <strong>49.24%</strong></p>
+                </div>
+            </div>
+        </div>
+        <section class="patch-notes">
+            <h2 class="section-title">Changements Récents</h2>
+            
+            <div class="patch-item">
+                <div class="patch-header">
+                    <span class="patch-type buff">BUFF</span>
+                    <h3 class="champion-name">Yasuo</h3>
+                    <span class="patch-nom">25.04</span>
+                </div>
+                <p class="patch-details">Passif (Voie du Vagabond) : Pénalité de dégats critiques de -10% supprimée.</p>
+                <button class="details-btn">Détails</button>
+            </div>
+
+            <div class="patch-item">
+                <div class="patch-header">
+                    <span class="patch-type nerf">NERF</span>
+                    <h3 class="champion-name">Yuumi</h3>
+                    <span class="patch-nom">25.14</span>
+                </div>
+                <p class="patch-details">Ultime (Chapitre Final) : Scaling du soin +0.15AP → +0.10AP.</p>
+                <button class="details-btn">Détails</button>
+            </div>
+
+            <div class="patch-item">
+                <div class="patch-header">
+                    <span class="patch-type buff">BUFF</span>
+                    <h3 class="champion-name">Anivia</h3>
+                    <span class="patch-nom">25.20</span>
+                </div>
+                <p class="patch-details">Q (Lance de Glace) : Cooldown 12 - 8 sec → 11 - 7 sec.</p>
+                <button class="details-btn">Détails</button>
+            </div>
+
+            <a href="#" class="see-all-link">Voir tous →</a>
+        </section>
     </main>
-    
-    <footer id="main-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>À Propos</h3>
+
+    <footer id="footer">
+        <div class="footer-parent">
+            <div class="footer-content">
+                <h3 class="footer-titre">À Propos</h3>
                 <ul>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Mentions légales</a></li>
-                    <li><a href="#">Qui sommes-nous ?</a></li>
-                    <li><a href="#">Conditions d'utilisations</a></li>
+                    <li><a class="lien-footer" href="#">Contact</a></li>
+                    <li><a class="lien-footer" href="#">Mentions légales</a></li>
+                    <li><a class="lien-footer" href="#">Qui sommes-nous ?</a></li>
+                    <li><a class="lien-footer" href="#">Conditions d'utilisations</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Communauté</h3>
+            <div class="footer-content">
+                <h3 class="footer-titre">Communauté</h3>
                 <ul>
-                    <li><a href="#">Discord</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">Reddit</a></li>
-                    <li><a href="#">Forums</a></li>
+                    <li><a class="lien-footer" href="#">Discord</a></li>
+                    <li><a class="lien-footer" href="#">X</a></li>
+                    <li><a class="lien-footer" href="#">Reddit</a></li>
+                    <li><a class="lien-footer" href="#">Forums</a></li>
                 </ul>
             </div>
         </div>
@@ -45,4 +221,5 @@
         </div>
     </footer>
 </body>
+
 </html>

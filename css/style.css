@@ -4,7 +4,7 @@ footer {
     padding: 40px 20px 20px;
 }
 
-.footer-content {
+.footer-parent {
     display: flex;
     justify-content: space-around;
     max-width: 1200px;
@@ -14,12 +14,12 @@ footer {
     gap: 40px;
 }
 
-.footer-section {
+.footer-content {
     flex: 1;
     min-width: 200px;
 }
 
-.footer-section h3 {
+.footer-content h3 {
     font-family: 'Cinzel', serif;
     color: #fff;
     font-size: 1.1rem;
@@ -27,16 +27,16 @@ footer {
     font-weight: 600;
 }
 
-.footer-section ul {
+.footer-content ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-section ul li {
+.footer-content ul li {
     margin-bottom: 8px;
 }
 
-.footer-section ul li a {
+.footer-content ul li a {
     font-family: 'Lato', sans-serif;
     color: #a0a0a0;
     text-decoration: none;
@@ -44,7 +44,7 @@ footer {
     transition: color 0.3s;
 }
 
-.footer-section ul li a:hover {
+.footer-content ul li a:hover {
     color: #fff;
 }
 
