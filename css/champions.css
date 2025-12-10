@@ -1,1 +1,425 @@
 /* Champions Page Styles */
+
+/* Hero Section */
+.hero {
+    background: 
+        linear-gradient(180deg, 
+            rgba(10, 14, 22, 0.3) 0%, 
+            rgba(10, 14, 22, 0.7) 50%,
+            rgba(10, 14, 22, 0.95) 100%
+        ), 
+        url('../img/banners/ViegoHero.png') center/cover no-repeat;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero .section-titre {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.hero-sous-tire {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.hero-sous-titre {
+    font-family: 'Lato', sans-serif;
+    color: #c0c0c0;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Champion à la une Section */
+.a-la-une {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.a-la-une-titre {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.Yasuo-une-carte {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 30% 1fr;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid #2a3a4a;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.Yasuo-une-carte:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(212, 175, 55, 0.2);
+}
+
+.champion-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.champion-info {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.champion-role {
+    display: inline-block;
+    background: #d4af37;
+    color: #0a0e16;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.champion-name {
+    font-family: 'Cinzel', serif;
+    color: #fff;
+    font-size: 1.8rem;
+    margin: 10px 0;
+    font-weight: 700;
+}
+
+.champion-description {
+    font-family: 'Lato', sans-serif;
+    color: #c0c0c0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.champion-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    font-family: 'Lato', sans-serif;
+    color: #888;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+}
+
+.stat-value {
+    font-family: 'Lato', sans-serif;
+    color: #d4af37;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.champion-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-label {
+    font-family: 'Lato', sans-serif;
+    color: #888;
+    font-size: 0.85rem;
+    text-transform: capitalize;
+}
+
+.stat-value {
+    font-family: 'Lato', sans-serif;
+    color: #d4af37;
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* Tier List Section */
+.tier-list {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.tier-list-titre {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.tier-list-carte {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.tier-S, .tier-A, .tier-B {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    padding: 30px;
+    min-height: 200px;
+    border: 1px solid #2a3a4a;
+    position: relative;
+}
+
+.tier-S::before {
+    content: 'S';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff4444;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tier-A::before {
+    content: 'A';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ff9944;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tier-B::before {
+    content: 'B';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffcc44;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Meta Section */
+.meta {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.meta .section-titre {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.meta-conteneur {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.ban-rate-carte {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #2a3a4a;
+}
+
+.ban-rate-carte h3 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ban-rate-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.champion-nom {
+    font-family: 'Lato', sans-serif;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.ban-rate-pourcentage {
+    font-family: 'Lato', sans-serif;
+    color: #d4af37;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Voir tous link */
+.voir-tous {
+    font-family: 'Lato', sans-serif;
+    color: #d4af37;
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.voir-tous:hover {
+    color: #ffd700;
+}
+
+/* General body styling */
+body {
+    background-color: #0a0e16;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Header */
+header {
+    background: linear-gradient(180deg, rgba(10, 14, 22, 0.95) 0%, rgba(10, 14, 22, 0.85) 100%);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+nav a {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.search-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 8px 20px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    outline: none;
+}
+
+/* Side Navigation */
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 120px;
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.9) 0%, rgba(15, 23, 34, 0.9) 100%);
+    padding: 30px 20px;
+    border-radius: 0 12px 12px 0;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-left: none;
+    z-index: 500;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav li {
+    margin-bottom: 20px;
+}
+
+.side-nav a {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    display: block;
+    padding: 10px;
+}
+
+.side-nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transform: translateX(5px);
+}
+
+/* Adjust main content for fixed header */
+main {
+    margin-top: 90px;
+}
+

@@ -18,17 +18,65 @@
 
 <body>
     <header id="header">
+        <img src="img/champions/logo.png" alt="League of Legends" class="logo">
+        <nav>
+            <a href="index.html">Gameplay</a>
+            <a href="univers.html">Univers</a>
+            <a href="champions.html">Champions</a>
+            <a href="esports.html">E-sport</a>
+            <a href="nouveautes.html">Nouveautés</a>
+            <a href="apropos.html">À Propos</a>
+            <a href="communaute.html">Communauté</a>
+        </nav>
+        <input type="text" placeholder="Rechercher" class="search-bar">
     </header>
 
+    <!-- Side Navigation -->
+    <aside class="side-nav">
+        <ul>
+            <li><a href="#a-la-une">À la une</a></li>
+            <li><a href="#tier-list">Tier List</a></li>
+            <li><a href="#meta">Meta</a></li>
+            <li><a href="#changements">Changements</a></li>
+        </ul>
+    </aside>
+
     <main>
-        <div class="hero">
+        <div class="hero"> <!-- section hero  -->
             <h1 class="section-titre">Champions</h1>
             <h2 class="hero-sous-tire">Plus de 170 champions à découvrir</h2>
             <h3 class="hero-sous-titre">Descriptions, Tier Lists, Meta et autres!</h3>
         </div>
-        <div class="a-la-une">
+        <div class="a-la-une" id="a-la-une">
             <h2 class="a-la-une-titre">Champion à la une</h2>
-            <div class="Yasuo-une-carte"></div>
+            <div class="Yasuo-une-carte">
+                <img src="img/champions/yasuo.png" alt="Yasuo" class="champion-image">
+                <div class="champion-info">
+                    <span class="champion-role">Skirmisher</span>
+                    <h3 class="champion-name">Yasuo</h3>
+                    <p class="champion-description">
+                        Maître épéiste ionien au tempérament de feu, Yasuo est un guerrier agile qui manie le vent lui-même pour affronter ses ennemis. Autrefois accusé à tort du meurtre de son maître, il erre désormais en quête de rédemption.
+                    </p>
+                    <div class="champion-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Win rate</span>
+                            <span class="stat-value">51.2%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Pick rate</span>
+                            <span class="stat-value">23.8%</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Difficulté</span>
+                            <span class="stat-value">Élevé</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Rôle Pricipal</span>
+                            <span class="stat-value">Mid</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <h5 class="voir-tous">Voir tous</h5>
         </div>
         <div class="tier-list">
@@ -40,7 +88,7 @@
             </div>
             <h5 class="voir-tous">Voir tous</h5>
         </div>
-        <div class="meta">
+        <div class="meta"> <!-- section meta  -->
             <h2 class="section-titre">Analyse Meta</h2>
             <div class="meta-conteneur">
                 <div class="ban-rate-carte">
@@ -158,7 +206,7 @@
                 </div>
             </div>
         </div>
-        <section class="patch-notes">
+        <section class="patch-notes"> <!-- section patch notes  -->
             <h2 class="section-title">Changements Récents</h2>
             
             <div class="patch-item">
@@ -195,7 +243,7 @@
         </section>
     </main>
 
-    <footer id="footer">
+    <footer id="footer"> <!-- footer  -->
         <div class="footer-parent">
             <div class="footer-content">
                 <h3 class="footer-titre">À Propos</h3>
