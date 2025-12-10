@@ -79,61 +79,162 @@
             </div>
             <h5 class="voir-tous">Voir tous</h5>
         </div>
-        <div class="tier-list">
-            <h1 class="tier-list-titre">Tier List</h1>
-            <div class="tier-list-carte">
-                <div class="tier-S"></div>
-                <div class="tier-A"></div>
-                <div class="tier-B"></div>
+        <div class="tier-list" id="tier-list">
+            <h2 class="tier-list-titre">Tier List</h2>
+            <div class="tier-list-conteneur">
+                <!-- Tier S -->
+                <div class="tier-row">
+                    <div class="tier-label tier-s-label">S</div>
+                    <div class="tier-champions">
+                        <img src="img/champions/zed.png" alt="Zed" class="tier-champion-icon icon-zed" title="Zed">
+                        <img src="img/champions/ahri.png" alt="Ahri" class="tier-champion-icon" title="Ahri">
+                    </div>
+                </div>
+                <!-- Tier A -->
+                <div class="tier-row">
+                    <div class="tier-label tier-a-label">A</div>
+                    <div class="tier-champions">
+                        <img src="img/champions/yasuo.png" alt="Yasuo" class="tier-champion-icon icon-yasuo" title="Yasuo">
+                        <img src="img/champions/thresh.png" alt="Thresh" class="tier-champion-icon" title="Thresh">
+                        <img src="img/champions/lux.png" alt="Lux" class="tier-champion-icon" title="Lux">
+                    </div>
+                </div>
+                <!-- Tier B -->
+                <div class="tier-row">
+                    <div class="tier-label tier-b-label">B</div>
+                    <div class="tier-champions">
+                        <img src="img/champions/garen.png" alt="Garen" class="tier-champion-icon icon-garen" title="Garen">
+                        <img src="img/champions/darius.png" alt="Darius" class="tier-champion-icon" title="Darius">
+                        <img src="img/champions/leona.png" alt="Leona" class="tier-champion-icon icon-leona" title="Leona">
+                    </div>
+                </div>
             </div>
             <h5 class="voir-tous">Voir tous</h5>
         </div>
-        <div class="meta"> <!-- section meta  -->
-            <h2 class="section-titre">Analyse Meta</h2>
+        <div class="meta" id="meta">
+            <h2 class="meta-titre">Analyse Meta</h2>
             <div class="meta-conteneur">
-                <div class="ban-rate-carte">
-                    <h3>Ban rate %</h3>
-                    <div class="ban-rate-item">
-                        <span class="champion-nom">Zed</span>
-                        <span class="ban-rate-pourcentage">29.2%</span>
+                <!-- Ban Rate -->
+                <div class="meta-carte">
+                    <div class="meta-carte-header">
+                        <span class="meta-icon">🚫</span>
+                        <h3>Ban Rate</h3>
                     </div>
-                    <div class="ban-rate-item">
-                        <span class="champion-nom">Yasuo</span>
-                        <span class="ban-rate-pourcentage">18.2%</span>
-                    </div>
-                    <div class="ban-rate-item">
-                        <span class="champion-nom">Darius</span>
-                        <span class="ban-rate-pourcentage">14.7%</span>
+                    <div class="meta-items">
+                        <div class="meta-item">
+                            <img src="img/champions/zed.png" alt="Zed" class="meta-champion-icon icon-zed">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Zed</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress ban-progress" style="width: 29.2%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value ban-value">29.2%</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="img/champions/yasuo.png" alt="Yasuo" class="meta-champion-icon icon-yasuo">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Yasuo</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress ban-progress" style="width: 18.2%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value ban-value">18.2%</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="img/champions/darius.png" alt="Darius" class="meta-champion-icon">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Darius</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress ban-progress" style="width: 14.7%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value ban-value">14.7%</span>
+                        </div>
                     </div>
                 </div>
-                <div class="win-rate-carte">
-                    <h3>Win rate %</h3>
-                    <div class="win-rate-item">
-                        <span class="champion-nom">Garen (Top)</span>
-                        <span class="win-rate-pourcentage">50.89%</span>
+                <!-- Win Rate -->
+                <div class="meta-carte">
+                    <div class="meta-carte-header">
+                        <span class="meta-icon">🏆</span>
+                        <h3>Win Rate</h3>
                     </div>
-                    <div class="win-rate-item">
-                        <span class="champion-nom">Leona (Sup)</span>
-                        <span class="win-rate-pourcentage">50.75%</span>
-                    </div>
-                    <div class="win-rate-item">
-                        <span class="champion-nom">Thresh (Sup)</span>
-                        <span class="win-rate-pourcentage">50.59%</span>
+                    <div class="meta-items">
+                        <div class="meta-item">
+                            <img src="img/champions/garen.png" alt="Garen" class="meta-champion-icon icon-garen">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Garen</span>
+                                <span class="meta-role">Top</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress win-progress" style="width: 50.89%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value win-value">50.89%</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="img/champions/leona.png" alt="Leona" class="meta-champion-icon icon-leona">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Leona</span>
+                                <span class="meta-role">Sup</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress win-progress" style="width: 50.75%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value win-value">50.75%</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="img/champions/thresh.png" alt="Thresh" class="meta-champion-icon">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Thresh</span>
+                                <span class="meta-role">Sup</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress win-progress" style="width: 50.59%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value win-value">50.59%</span>
+                        </div>
                     </div>
                 </div>
-                <div class="pick-rate-carte">
-                    <h3>Pick rate %</h3>
-                    <div class="pick-rate-item">
-                        <span class="champion-nom">Yasuo (Mid)</span>
-                        <span class="pick-rate-pourcentage">12.9%</span>
+                <!-- Pick Rate -->
+                <div class="meta-carte">
+                    <div class="meta-carte-header">
+                        <span class="meta-icon">📊</span>
+                        <h3>Pick Rate</h3>
                     </div>
-                    <div class="pick-rate-item">
-                        <span class="champion-nom">Thresh (Sup)</span>
-                        <span class="pick-rate-pourcentage">7.5%</span>
-                    </div>
-                    <div class="pick-rate-item">
-                        <span class="champion-nom">Ahri (Mid)</span>
-                        <span class="pick-rate-pourcentage">7.1%</span>
+                    <div class="meta-items">
+                        <div class="meta-item">
+                            <img src="img/champions/yasuo.png" alt="Yasuo" class="meta-champion-icon icon-yasuo">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Yasuo</span>
+                                <span class="meta-role">Mid</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress pick-progress" style="width: 12.9%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value pick-value">12.9%</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="img/champions/thresh.png" alt="Thresh" class="meta-champion-icon">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Thresh</span>
+                                <span class="meta-role">Sup</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress pick-progress" style="width: 7.5%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value pick-value">7.5%</span>
+                        </div>
+                        <div class="meta-item">
+                            <img src="img/champions/ahri.png" alt="Ahri" class="meta-champion-icon">
+                            <div class="meta-item-info">
+                                <span class="meta-champion-name">Ahri</span>
+                                <span class="meta-role">Mid</span>
+                                <div class="meta-progress-bar">
+                                    <div class="meta-progress pick-progress" style="width: 7.1%;"></div>
+                                </div>
+                            </div>
+                            <span class="meta-value pick-value">7.1%</span>
+                        </div>
                     </div>
                 </div>
             </div>
