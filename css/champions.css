@@ -11,11 +11,54 @@ body {
     font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Animation subtile en arrière-plan */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(ellipse 1000px 1000px at 20% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 900px 900px at 80% 70%, rgba(100, 149, 237, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 800px 800px at 50% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    animation: backgroundPulse 15s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 2;
+}
+
+@keyframes backgroundPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.1) translate(20px, -20px);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05) translate(-10px, 10px);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.15) translate(-20px, -10px);
+    }
 }
 
 /* Contenu principal - ajustement pour l'en-tête fixe */
 main {
     margin-top: 90px;
+}
+
+/* Décalage pour les ancres (compense le header fixe) */
+[id] {
+    scroll-margin-top: 120px;
 }
 
 /* -----------------------------------------
@@ -36,8 +79,9 @@ header {
 }
 
 .logo {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
 }
 
 /* Liens de navigation */
@@ -80,12 +124,35 @@ nav a:hover {
     position: fixed;
     left: 0;
     top: 120px;
-    background: linear-gradient(135deg, rgba(26, 35, 50, 0.9) 0%, rgba(15, 23, 34, 0.9) 100%);
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.95) 0%, rgba(15, 23, 34, 0.95) 100%);
     padding: 30px 20px;
     border-radius: 0 12px 12px 0;
     border: 1px solid rgba(212, 175, 55, 0.2);
     border-left: none;
     z-index: 500;
+    transform: translateX(-85%);
+    transition: transform 0.3s ease;
+}
+
+.side-nav:hover {
+    transform: translateX(0);
+}
+
+/* Indicateur visuel pour montrer que le menu est là */
+.side-nav::after {
+    content: '›';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #d4af37;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.side-nav:hover::after {
+    opacity: 0;
 }
 
 .side-nav ul {
@@ -108,6 +175,7 @@ nav a:hover {
     transition: all 0.3s;
     display: block;
     padding: 10px;
+    white-space: nowrap;
 }
 
 .side-nav a:hover {
@@ -135,8 +203,10 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 100px 20px;
     position: relative;
+    z-index: 0;
+    margin-top: 110px;
+    padding-top: 150px;
 }
 
 /* Titre principal du hero */
@@ -176,6 +246,7 @@ nav a:hover {
     max-width: 900px;
     margin: 80px auto;
     padding: 0 20px;
+    position: relative;
 }
 
 /* Titre de la section */
@@ -199,6 +270,8 @@ nav a:hover {
     border: 1px solid #2a3a4a;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 3;
 }
 
 .Yasuo-une-carte:hover {
@@ -290,6 +363,7 @@ nav a:hover {
     max-width: 900px;
     margin: 80px auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .tier-list-titre {
@@ -319,6 +393,8 @@ nav a:hover {
     border: 1px solid #2a3a4a;
     overflow: hidden;
     min-height: 80px;
+    position: relative;
+    z-index: 3;
 }
 
 /* Label du tier (S, A, B) */
@@ -392,6 +468,7 @@ nav a:hover {
     max-width: 1100px;
     margin: 80px auto;
     padding: 0 20px;
+    position: relative;
 }
 
 .meta-titre {
@@ -418,6 +495,8 @@ nav a:hover {
     padding: 25px;
     border: 1px solid #2a3a4a;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 3;
 }
 
 .meta-carte:hover {
@@ -564,7 +643,334 @@ nav a:hover {
 }
 
 /* -----------------------------------------
-   8. ÉLÉMENTS COMMUNS / UTILITAIRES
+   8. GRILLE DES CHAMPIONS
+   ----------------------------------------- */
+.champions-grid {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.champions-grid-titre {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Grille des cartes (4 colonnes) */
+.champions-grid-conteneur {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Carte champion individuelle */
+.champion-carte {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+
+.champion-carte:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.25);
+    border-color: #d4af37;
+}
+
+/* Image du champion */
+.champion-carte-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.champion-carte-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.champion-carte:hover .champion-carte-image img {
+    transform: scale(1.1);
+}
+
+/* Repositionnement des images spécifiques */
+.img-zed,
+.img-yasuo,
+.img-garen,
+.img-leona {
+    object-position: 80% 80%;
+}
+
+/* Badge du rôle sur l'image */
+.champion-carte-role {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.role-top {
+    background: linear-gradient(135deg, #8b4513 0%, #a0522d 100%);
+    color: #fff;
+}
+
+.role-mid {
+    background: linear-gradient(135deg, #4169e1 0%, #6495ed 100%);
+    color: #fff;
+}
+
+.role-sup {
+    background: linear-gradient(135deg, #2e8b57 0%, #3cb371 100%);
+    color: #fff;
+}
+
+.role-adc {
+    background: linear-gradient(135deg, #dc143c 0%, #ff4500 100%);
+    color: #fff;
+}
+
+.role-jungle {
+    background: linear-gradient(135deg, #228b22 0%, #32cd32 100%);
+    color: #fff;
+}
+
+/* Infos du champion */
+.champion-carte-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.champion-carte-nom {
+    font-family: 'Cinzel', serif;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+/* Stats */
+.champion-carte-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.winrate {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #888;
+}
+
+.winrate.high {
+    color: #66ff66;
+}
+
+.winrate-label {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    color: #666;
+    text-transform: uppercase;
+}
+
+/* Responsive - 3 colonnes */
+@media (max-width: 1000px) {
+    .champions-grid-conteneur {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Responsive - 2 colonnes */
+@media (max-width: 700px) {
+    .champions-grid-conteneur {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Responsive - 1 colonne */
+@media (max-width: 450px) {
+    .champions-grid-conteneur {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* -----------------------------------------
+   9. SECTION PATCH NOTES
+   ----------------------------------------- */
+.patch-notes {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.patch-notes .section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Carte Patch Item */
+.patch-item {
+    background: linear-gradient(135deg, rgba(20, 25, 35, 0.95) 0%, rgba(15, 20, 30, 0.9) 100%);
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 20px;
+    border-left: 4px solid #d4af37;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 3;
+}
+
+.patch-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* En-tête du patch */
+.patch-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+/* Badge Buff/Nerf */
+.patch-type {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.patch-type.buff {
+    background: linear-gradient(135deg, #2a5a2a 0%, #1a3a1a 100%);
+    color: #66ff66;
+    border: 1px solid #66ff66;
+}
+
+.patch-type.nerf {
+    background: linear-gradient(135deg, #5a2a2a 0%, #3a1a1a 100%);
+    color: #ff6666;
+    border: 1px solid #ff6666;
+}
+
+/* Nom du champion dans le patch */
+.patch-header .champion-name {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 0;
+    flex-grow: 1;
+}
+
+/* Numéro du patch */
+.patch-nom {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    color: #888;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+/* Détails du patch */
+.patch-details {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    color: #c0c0c0;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+/* Bouton Détails */
+.details-btn {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #d4af37;
+    background: transparent;
+    border: 1px solid #d4af37;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.details-btn:hover {
+    background: #d4af37;
+    color: #0a0e16;
+}
+
+/* Lien Voir tous (patch notes) */
+.patch-notes .see-all-link {
+    display: block;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #d4af37;
+    text-decoration: none;
+    margin-top: 30px;
+    transition: color 0.3s;
+}
+
+.patch-notes .see-all-link:hover {
+    color: #ffd700;
+}
+
+/* Responsive Patch Notes */
+@media (max-width: 600px) {
+    .patch-item {
+        padding: 20px;
+    }
+    
+    .patch-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .patch-header .champion-name {
+        font-size: 1.2rem;
+    }
+    
+    .patch-notes .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* -----------------------------------------
+   10. ÉLÉMENTS COMMUNS / UTILITAIRES
    ----------------------------------------- */
 
 /* Lien "Voir tous" */
@@ -580,4 +986,267 @@ nav a:hover {
 
 .voir-tous:hover {
     color: #ffd700;
+}
+
+/* =========================================
+   11. RESPONSIVE MOBILE
+   ========================================= */
+
+/* -----------------------------------------
+   Tablette (max 900px)
+   ----------------------------------------- */
+@media (max-width: 900px) {
+    /* Header */
+    header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    nav {
+        gap: 20px;
+    }
+    
+    nav a {
+        font-size: 0.85rem;
+    }
+    
+    .search-bar {
+        width: 150px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 400px;
+        padding: 80px 15px;
+        padding-top: 120px;
+    }
+    
+    .hero .section-titre {
+        font-size: 2.5rem;
+    }
+    
+    .hero-sous-tire {
+        font-size: 1.3rem;
+    }
+    
+    .hero-sous-titre {
+        font-size: 1rem;
+    }
+    
+    /* Champion à la une */
+    .Yasuo-une-carte {
+        grid-template-columns: 1fr;
+    }
+    
+    .champion-image {
+        height: 250px;
+    }
+    
+    /* Side nav - cacher sur tablette */
+    .side-nav {
+        display: none;
+    }
+}
+
+/* -----------------------------------------
+   Mobile (max 600px)
+   ----------------------------------------- */
+@media (max-width: 600px) {
+    /* Header mobile */
+    header {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    .search-bar {
+        width: 100%;
+        order: 3;
+        margin-top: 5px;
+    }
+    
+    /* Main */
+    main {
+        margin-top: 70px;
+    }
+    
+    /* Hero mobile */
+    .hero {
+        min-height: 350px;
+        padding: 60px 15px;
+        padding-top: 100px;
+        margin-top: 110px;
+    }
+    
+    .hero .section-titre {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-sous-tire {
+        font-size: 1.1rem;
+    }
+    
+    .hero-sous-titre {
+        font-size: 0.9rem;
+    }
+    
+    /* Sections */
+    .a-la-une,
+    .tier-list,
+    .meta,
+    .champions-grid,
+    .patch-notes {
+        margin: 40px auto;
+        padding: 0 15px;
+    }
+    
+    /* Titres de section */
+    .a-la-une-titre,
+    .tier-list-titre,
+    .meta-titre,
+    .champions-grid-titre,
+    .patch-notes .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    
+    /* Champion à la une - mobile */
+    .Yasuo-une-carte {
+        grid-template-columns: 1fr;
+        border-radius: 8px;
+    }
+    
+    .champion-image {
+        height: 200px;
+    }
+    
+    .champion-info {
+        padding: 20px;
+    }
+    
+    .champion-name {
+        font-size: 1.5rem;
+    }
+    
+    .champion-description {
+        font-size: 0.9rem;
+    }
+    
+    .champion-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Tier list mobile */
+    .tier-row {
+        grid-template-columns: 50px 1fr;
+        min-height: 60px;
+    }
+    
+    .tier-label {
+        font-size: 1.8rem;
+    }
+    
+    .tier-champion-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    /* Meta mobile */
+    .meta-conteneur {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .meta-carte {
+        padding: 20px;
+    }
+    
+    /* Champions grid mobile */
+    .champions-grid-conteneur {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .champion-carte-image {
+        height: 150px;
+    }
+    
+    .champion-carte-nom {
+        font-size: 1rem;
+    }
+    
+    /* Patch notes mobile */
+    .patch-item {
+        padding: 15px;
+        border-radius: 8px;
+    }
+    
+    .patch-type {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+    
+    .patch-details {
+        font-size: 0.9rem;
+    }
+    
+    .details-btn {
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+    
+    /* Voir tous */
+    .voir-tous {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+}
+
+/* -----------------------------------------
+   Petit mobile (max 400px)
+   ----------------------------------------- */
+@media (max-width: 400px) {
+    .hero .section-titre {
+        font-size: 1.6rem;
+    }
+    
+    .hero-sous-tire {
+        font-size: 1rem;
+    }
+    
+    .champions-grid-conteneur {
+        grid-template-columns: 1fr;
+    }
+    
+    .champion-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .tier-row {
+        grid-template-columns: 40px 1fr;
+    }
+    
+    .tier-label {
+        font-size: 1.5rem;
+    }
+    
+    .tier-champion-icon {
+        width: 35px;
+        height: 35px;
+    }
 }

@@ -37,7 +37,8 @@
             <li><a href="#a-la-une">À la une</a></li>
             <li><a href="#tier-list">Tier List</a></li>
             <li><a href="#meta">Meta</a></li>
-            <li><a href="#changements">Changements</a></li>
+            <li><a href="#champions-grid">Champions</a></li>
+            <li><a href="#patch-notes">Patch Notes</a></li>
         </ul>
     </aside>
 
@@ -77,7 +78,7 @@
                     </div>
                 </div>
             </div>
-            <h5 class="voir-tous">Voir tous</h5>
+            <h5 class="voir-tous">Voir tous →</h5>
         </div>
         <div class="tier-list" id="tier-list">
             <h2 class="tier-list-titre">Tier List</h2>
@@ -109,7 +110,7 @@
                     </div>
                 </div>
             </div>
-            <h5 class="voir-tous">Voir tous</h5>
+            <h5 class="voir-tous">Voir tous →</h5>
         </div>
         <div class="meta" id="meta">
             <h2 class="meta-titre">Analyse Meta</h2>
@@ -238,76 +239,119 @@
                     </div>
                 </div>
             </div>
-            <h5 class="voir-tous">Voir tous</h5>
+            <h5 class="voir-tous">Voir tous →</h5>
         </div>
-        <div class="champions-grid">
-            <h2 class="section-titre"></h2>
-            <div class="champions-carte"> <!-- champion carte 1  -->
-                <img src="img/champions/darius.png" alt="darius">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Darius</h3>
-                    <span class="champion-role">TOP</span>
-                    <p class="champion-winrate">Win rate: <strong>49.49%</strong></p>
+        <div class="champions-grid" id="champions-grid">
+            <h2 class="champions-grid-titre">Tous les Champions</h2>
+            <div class="champions-grid-conteneur">
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/darius.png" alt="Darius">
+                        <span class="champion-carte-role role-top">Top</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Darius</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate">49.49%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/ahri.png" alt="Ahri">
+                        <span class="champion-carte-role role-mid">Mid</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Ahri</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate">49.90%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/garen.png" alt="Garen" class="img-garen">
+                        <span class="champion-carte-role role-top">Top</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Garen</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate high">50.89%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/leona.png" alt="Leona" class="img-leona">
+                        <span class="champion-carte-role role-sup">Sup</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Leona</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate high">50.75%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/lux.png" alt="Lux">
+                        <span class="champion-carte-role role-mid">Mid</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Lux</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate">49.63%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/thresh.png" alt="Thresh">
+                        <span class="champion-carte-role role-sup">Sup</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Thresh</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate high">50.59%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/yasuo.png" alt="Yasuo" class="img-yasuo">
+                        <span class="champion-carte-role role-mid">Mid</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Yasuo</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate high">51.52%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="champion-carte">
+                    <div class="champion-carte-image">
+                        <img src="img/champions/zed.png" alt="Zed" class="img-zed">
+                        <span class="champion-carte-role role-mid">Mid</span>
+                    </div>
+                    <div class="champion-carte-info">
+                        <h3 class="champion-carte-nom">Zed</h3>
+                        <div class="champion-carte-stats">
+                            <span class="winrate">49.24%</span>
+                            <span class="winrate-label">Win Rate</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="champions-carte"> <!-- champion carte 2  -->
-                <img src="img/champions/ahri.png" alt="ahri">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Ahri</h3>
-                    <span class="champion-role">MID</span>
-                    <p class="champion-winrate">Win rate: <strong>49.90%</strong></p>
-                </div>
-            </div>
-            <div class="champions-carte"> <!-- champion carte 3  -->
-                <img src="img/champions/garen.png" alt="garen">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Garen</h3>
-                    <span class="champion-role">TOP</span>
-                    <p class="champion-winrate">Win rate: <strong>50.89%</strong></p>
-                </div>
-            </div>
-            <div class="champions-carte"> <!-- champion carte 4  -->
-                <img src="img/champions/leona.png" alt="leona">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Leona</h3>
-                    <span class="champion-role">SUP</span>
-                    <p class="champion-winrate">Win rate: <strong>50.75%</strong></p>
-                </div>
-            </div>
-            <div class="champions-carte"> <!-- champion carte 5  -->
-                <img src="img/champions/lux.png" alt="lux">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Lux</h3>
-                    <span class="champion-role">MID</span>
-                    <p class="champion-winrate">Win rate: <strong>49.63%</strong></p>
-                </div>
-            </div>
-            <div class="champions-carte"> <!-- champion carte 6  -->
-                <img src="img/champions/thresh.png" alt="thresh">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Thresh</h3>
-                    <span class="champion-role">SUP</span>
-                    <p class="champion-winrate">Win rate: <strong>50.59%</strong></p>
-                </div>
-            </div>
-            <div class="champions-carte"> <!-- champion carte 7  -->
-                <img src="img/champions/yasuo.png" alt="yasuo">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Yasuo</h3>
-                    <span class="champion-role">MID</span>
-                    <p class="champion-winrate">Win rate: <strong>51.52%</strong></p>
-                </div>
-            </div>
-            <div class="champions-carte"> <!-- champion carte 8  -->
-                <img src="img/champions/zed.png" alt="zed">
-                <div class="champion-info">
-                    <h3 class="champion-nom">Zed</h3>
-                    <span class="champion-role">MID</span>
-                    <p class="champion-winrate">Win rate: <strong>49.24%</strong></p>
-                </div>
-            </div>
+            <h5 class="voir-tous">Voir tous les champions →</h5>
         </div>
-        <section class="patch-notes"> <!-- section patch notes  -->
+        <section class="patch-notes" id="patch-notes"> <!-- section patch notes  -->
             <h2 class="section-title">Changements Récents</h2>
             
             <div class="patch-item">
