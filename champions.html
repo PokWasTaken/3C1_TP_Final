@@ -2,23 +2,36 @@
 <html lang="fr">
 
 <head>
+    <!-- ===== MÉTADONNÉES ===== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Champions - Wiki League Of Legends</title>
+    
+    <!-- ===== POLICES GOOGLE FONTS ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="normalize/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/champions.css">
+    
+    <!-- ===== FEUILLES DE STYLE ===== -->
+    <link rel="stylesheet" href="normalize/normalize.css">  <!-- Reset CSS -->
+    <link rel="stylesheet" href="css/style.css">            <!-- Styles globaux -->
+    <link rel="stylesheet" href="css/champions.css">        <!-- Styles page champions -->
+    
+    <!-- ===== SCRIPTS ===== -->
     <script defer src="js/main.js"></script>
 </head>
 
 <body>
+    <!-- ========================================
+         EN-TÊTE / NAVIGATION PRINCIPALE
+         ======================================== -->
     <header id="header">
+        <!-- Logo du site -->
         <img src="img/champions/logo.png" alt="League of Legends" class="logo">
+        
+        <!-- Menu de navigation principal -->
         <nav>
             <a href="index.html">Gameplay</a>
             <a href="univers.html">Univers</a>
@@ -28,10 +41,15 @@
             <a href="apropos.html">À Propos</a>
             <a href="communaute.html">Communauté</a>
         </nav>
+        
+        <!-- Barre de recherche -->
         <input type="text" placeholder="Rechercher" class="search-bar">
     </header>
 
-    <!-- Side Navigation -->
+    <!-- ========================================
+         NAVIGATION LATÉRALE (SIDE NAV)
+         Menu fixe à gauche avec liens d'ancrage
+         ======================================== -->
     <aside class="side-nav">
         <ul>
             <li><a href="#a-la-une">À la une</a></li>
@@ -42,22 +60,37 @@
         </ul>
     </aside>
 
+    <!-- ========================================
+         CONTENU PRINCIPAL
+         ======================================== -->
     <main>
-        <div class="hero"> <!-- section hero  -->
+        <!-- ===== SECTION HERO (BANNIÈRE) ===== 
+             Image de fond avec titre principal -->
+        <div class="hero">
             <h1 class="section-titre">Champions</h1>
             <h2 class="hero-sous-tire">Plus de 170 champions à découvrir</h2>
             <h3 class="hero-sous-titre">Descriptions, Tier Lists, Meta et autres!</h3>
         </div>
+        
+        <!-- ===== SECTION CHAMPION À LA UNE ===== 
+             Mise en avant d'un champion avec stats -->
         <div class="a-la-une" id="a-la-une">
             <h2 class="a-la-une-titre">Champion à la une</h2>
+            
+            <!-- Carte du champion vedette -->
             <div class="Yasuo-une-carte">
+                <!-- Image du champion -->
                 <img src="img/champions/yasuo.png" alt="Yasuo" class="champion-image">
+                
+                <!-- Informations du champion -->
                 <div class="champion-info">
                     <span class="champion-role">Skirmisher</span>
                     <h3 class="champion-name">Yasuo</h3>
                     <p class="champion-description">
                         Maître épéiste ionien au tempérament de feu, Yasuo est un guerrier agile qui manie le vent lui-même pour affronter ses ennemis. Autrefois accusé à tort du meurtre de son maître, il erre désormais en quête de rédemption.
                     </p>
+                    
+                    <!-- Statistiques du champion -->
                     <div class="champion-stats">
                         <div class="stat-item">
                             <span class="stat-label">Win rate</span>
@@ -80,10 +113,14 @@
             </div>
             <h5 class="voir-tous">Voir tous →</h5>
         </div>
+        
+        <!-- ===== SECTION TIER LIST ===== 
+             Classement des champions par niveau (S, A, B) -->
         <div class="tier-list" id="tier-list">
             <h2 class="tier-list-titre">Tier List</h2>
             <div class="tier-list-conteneur">
-                <!-- Tier S -->
+                
+                <!-- Tier S - Champions les plus forts -->
                 <div class="tier-row">
                     <div class="tier-label tier-s-label">S</div>
                     <div class="tier-champions">
@@ -91,7 +128,8 @@
                         <img src="img/champions/ahri.png" alt="Ahri" class="tier-champion-icon" title="Ahri">
                     </div>
                 </div>
-                <!-- Tier A -->
+                
+                <!-- Tier A - Champions forts -->
                 <div class="tier-row">
                     <div class="tier-label tier-a-label">A</div>
                     <div class="tier-champions">
@@ -100,7 +138,8 @@
                         <img src="img/champions/lux.png" alt="Lux" class="tier-champion-icon" title="Lux">
                     </div>
                 </div>
-                <!-- Tier B -->
+                
+                <!-- Tier B - Champions moyens -->
                 <div class="tier-row">
                     <div class="tier-label tier-b-label">B</div>
                     <div class="tier-champions">
@@ -112,16 +151,21 @@
             </div>
             <h5 class="voir-tous">Voir tous →</h5>
         </div>
+        
+        <!-- ===== SECTION META (ANALYSE) ===== 
+             Statistiques globales : Ban Rate, Win Rate, Pick Rate -->
         <div class="meta" id="meta">
             <h2 class="meta-titre">Analyse Meta</h2>
             <div class="meta-conteneur">
-                <!-- Ban Rate -->
+                
+                <!-- Carte Ban Rate - Champions les plus bannis -->
                 <div class="meta-carte">
                     <div class="meta-carte-header">
-                        <span class="meta-icon">🚫</span>
+                        <span class="meta-icon">���</span>
                         <h3>Ban Rate</h3>
                     </div>
                     <div class="meta-items">
+                        <!-- Zed -->
                         <div class="meta-item">
                             <img src="img/champions/zed.png" alt="Zed" class="meta-champion-icon icon-zed">
                             <div class="meta-item-info">
@@ -132,6 +176,7 @@
                             </div>
                             <span class="meta-value ban-value">29.2%</span>
                         </div>
+                        <!-- Yasuo -->
                         <div class="meta-item">
                             <img src="img/champions/yasuo.png" alt="Yasuo" class="meta-champion-icon icon-yasuo">
                             <div class="meta-item-info">
@@ -142,6 +187,7 @@
                             </div>
                             <span class="meta-value ban-value">18.2%</span>
                         </div>
+                        <!-- Darius -->
                         <div class="meta-item">
                             <img src="img/champions/darius.png" alt="Darius" class="meta-champion-icon">
                             <div class="meta-item-info">
@@ -154,13 +200,15 @@
                         </div>
                     </div>
                 </div>
-                <!-- Win Rate -->
+                
+                <!-- Carte Win Rate - Champions avec meilleur taux de victoire -->
                 <div class="meta-carte">
                     <div class="meta-carte-header">
-                        <span class="meta-icon">🏆</span>
+                        <span class="meta-icon">���</span>
                         <h3>Win Rate</h3>
                     </div>
                     <div class="meta-items">
+                        <!-- Garen -->
                         <div class="meta-item">
                             <img src="img/champions/garen.png" alt="Garen" class="meta-champion-icon icon-garen">
                             <div class="meta-item-info">
@@ -172,6 +220,7 @@
                             </div>
                             <span class="meta-value win-value">50.89%</span>
                         </div>
+                        <!-- Leona -->
                         <div class="meta-item">
                             <img src="img/champions/leona.png" alt="Leona" class="meta-champion-icon icon-leona">
                             <div class="meta-item-info">
@@ -183,6 +232,7 @@
                             </div>
                             <span class="meta-value win-value">50.75%</span>
                         </div>
+                        <!-- Thresh -->
                         <div class="meta-item">
                             <img src="img/champions/thresh.png" alt="Thresh" class="meta-champion-icon">
                             <div class="meta-item-info">
@@ -196,13 +246,15 @@
                         </div>
                     </div>
                 </div>
-                <!-- Pick Rate -->
+                
+                <!-- Carte Pick Rate - Champions les plus joués -->
                 <div class="meta-carte">
                     <div class="meta-carte-header">
-                        <span class="meta-icon">📊</span>
+                        <span class="meta-icon">���</span>
                         <h3>Pick Rate</h3>
                     </div>
                     <div class="meta-items">
+                        <!-- Yasuo -->
                         <div class="meta-item">
                             <img src="img/champions/yasuo.png" alt="Yasuo" class="meta-champion-icon icon-yasuo">
                             <div class="meta-item-info">
@@ -214,6 +266,7 @@
                             </div>
                             <span class="meta-value pick-value">12.9%</span>
                         </div>
+                        <!-- Thresh -->
                         <div class="meta-item">
                             <img src="img/champions/thresh.png" alt="Thresh" class="meta-champion-icon">
                             <div class="meta-item-info">
@@ -225,6 +278,7 @@
                             </div>
                             <span class="meta-value pick-value">7.5%</span>
                         </div>
+                        <!-- Ahri -->
                         <div class="meta-item">
                             <img src="img/champions/ahri.png" alt="Ahri" class="meta-champion-icon">
                             <div class="meta-item-info">
@@ -241,9 +295,14 @@
             </div>
             <h5 class="voir-tous">Voir tous →</h5>
         </div>
+        
+        <!-- ===== SECTION GRILLE DES CHAMPIONS ===== 
+             Affichage de tous les champions en grille -->
         <div class="champions-grid" id="champions-grid">
             <h2 class="champions-grid-titre">Tous les Champions</h2>
             <div class="champions-grid-conteneur">
+                
+                <!-- Carte Darius -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/darius.png" alt="Darius">
@@ -257,6 +316,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Ahri -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/ahri.png" alt="Ahri">
@@ -270,6 +331,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Garen -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/garen.png" alt="Garen" class="img-garen">
@@ -283,6 +346,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Leona -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/leona.png" alt="Leona" class="img-leona">
@@ -296,6 +361,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Lux -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/lux.png" alt="Lux">
@@ -309,6 +376,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Thresh -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/thresh.png" alt="Thresh">
@@ -322,6 +391,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Yasuo -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/yasuo.png" alt="Yasuo" class="img-yasuo">
@@ -335,6 +406,8 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Carte Zed -->
                 <div class="champion-carte">
                     <div class="champion-carte-image">
                         <img src="img/champions/zed.png" alt="Zed" class="img-zed">
@@ -351,9 +424,13 @@
             </div>
             <h5 class="voir-tous">Voir tous les champions →</h5>
         </div>
-        <section class="patch-notes" id="patch-notes"> <!-- section patch notes  -->
+        
+        <!-- ===== SECTION PATCH NOTES ===== 
+             Derniers changements de balance des champions -->
+        <section class="patch-notes" id="patch-notes">
             <h2 class="section-title">Changements Récents</h2>
             
+            <!-- Patch Yasuo - Buff -->
             <div class="patch-item">
                 <div class="patch-header">
                     <span class="patch-type buff">BUFF</span>
@@ -364,6 +441,7 @@
                 <button class="details-btn">Détails</button>
             </div>
 
+            <!-- Patch Yuumi - Nerf -->
             <div class="patch-item">
                 <div class="patch-header">
                     <span class="patch-type nerf">NERF</span>
@@ -374,6 +452,7 @@
                 <button class="details-btn">Détails</button>
             </div>
 
+            <!-- Patch Anivia - Buff -->
             <div class="patch-item">
                 <div class="patch-header">
                     <span class="patch-type buff">BUFF</span>
@@ -388,8 +467,12 @@
         </section>
     </main>
 
-    <footer id="footer"> <!-- footer  -->
+    <!-- ========================================
+         PIED DE PAGE (FOOTER)
+         ======================================== -->
+    <footer id="footer">
         <div class="footer-parent">
+            <!-- Colonne À Propos -->
             <div class="footer-content">
                 <h3 class="footer-titre">À Propos</h3>
                 <ul>
@@ -399,6 +482,8 @@
                     <li><a class="lien-footer" href="#">Conditions d'utilisations</a></li>
                 </ul>
             </div>
+            
+            <!-- Colonne Communauté -->
             <div class="footer-content">
                 <h3 class="footer-titre">Communauté</h3>
                 <ul>
@@ -409,6 +494,8 @@
                 </ul>
             </div>
         </div>
+        
+        <!-- Copyright -->
         <div class="footer-bottom">
             <p>&copy; 2025 LeagueOfLegendsWiki. Tous droits réservés.</p>
         </div>
