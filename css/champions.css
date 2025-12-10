@@ -393,7 +393,7 @@ body.menu-open {
 }
 
 /* Sous-titres du hero */
-.hero-sous-tire {
+.hero-sous-titre-1 {
     font-family: 'Lato', sans-serif;
     color: #fff;
     font-size: 1.8rem;
@@ -401,7 +401,7 @@ body.menu-open {
     margin-bottom: 10px;
 }
 
-.hero-sous-titre {
+.hero-sous-titre-2 {
     font-family: 'Lato', sans-serif;
     color: #c0c0c0;
     font-size: 1.2rem;
