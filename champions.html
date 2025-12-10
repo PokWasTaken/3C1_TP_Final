@@ -31,8 +31,26 @@
         <!-- Logo du site -->
         <img src="img/champions/logo.png" alt="League of Legends" class="logo">
         
+        <!-- Bouton menu burger (mobile/tablette) -->
+        <button class="burger-menu" id="burger-menu" aria-label="Menu">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+        </button>
+        
         <!-- Menu de navigation principal -->
-        <nav>
+        <nav id="nav-menu">
+            <!-- Bouton fermer (X) pour mobile/tablette -->
+            <button class="nav-close" id="nav-close" aria-label="Fermer">
+                <span class="close-line"></span>
+                <span class="close-line"></span>
+            </button>
+            
+            <!-- Barre de recherche (dans le menu sur mobile) -->
+            <div class="nav-search">
+                <input type="text" placeholder="Rechercher..." class="search-bar-mobile">
+            </div>
+            
             <a href="index.html">Gameplay</a>
             <a href="univers.html">Univers</a>
             <a href="champions.html">Champions</a>
@@ -42,8 +60,8 @@
             <a href="communaute.html">CommunautÃ©</a>
         </nav>
         
-        <!-- Barre de recherche -->
-        <input type="text" placeholder="Rechercher" class="search-bar">
+        <!-- Barre de recherche (desktop) -->
+        <input type="text" placeholder="Rechercher" class="search-bar search-bar-desktop">
     </header>
 
     <!-- ========================================
@@ -161,7 +179,7 @@
                 <!-- Carte Ban Rate - Champions les plus bannis -->
                 <div class="meta-carte">
                     <div class="meta-carte-header">
-                        <span class="meta-icon">íº«</span>
+                        <span class="meta-icon">ï¿½ï¿½ï¿½</span>
                         <h3>Ban Rate</h3>
                     </div>
                     <div class="meta-items">
@@ -204,7 +222,7 @@
                 <!-- Carte Win Rate - Champions avec meilleur taux de victoire -->
                 <div class="meta-carte">
                     <div class="meta-carte-header">
-                        <span class="meta-icon">í¿†</span>
+                        <span class="meta-icon">ï¿½ï¿½ï¿½</span>
                         <h3>Win Rate</h3>
                     </div>
                     <div class="meta-items">
@@ -250,7 +268,7 @@
                 <!-- Carte Pick Rate - Champions les plus jouÃ©s -->
                 <div class="meta-carte">
                     <div class="meta-carte-header">
-                        <span class="meta-icon">í³Š</span>
+                        <span class="meta-icon">ï¿½ï¿½ï¿½</span>
                         <h3>Pick Rate</h3>
                     </div>
                     <div class="meta-items">

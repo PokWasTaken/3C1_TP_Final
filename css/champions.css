@@ -118,6 +118,112 @@ nav a:hover {
 }
 
 /* -----------------------------------------
+   MENU BURGER (Mobile/Tablette)
+   ----------------------------------------- */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.burger-line {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: #d4af37;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animation du burger quand actif (caché car on a le X dans le menu) */
+.burger-menu.active {
+    display: none;
+}
+
+/* Bouton fermer (X) dans le menu */
+.nav-close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.close-line {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 28px;
+    height: 3px;
+    background: #d4af37;
+    border-radius: 2px;
+    transition: background 0.3s;
+}
+
+.close-line:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-line:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.nav-close:hover .close-line {
+    background: #ffd700;
+}
+
+/* Barre de recherche dans le menu (mobile/tablette) */
+.nav-search {
+    display: none;
+    width: 100%;
+    padding: 20px 30px;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    box-sizing: border-box;
+}
+
+.search-bar-mobile {
+    width: 100%;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 25px;
+    padding: 12px 20px;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.search-bar-mobile:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.search-bar-mobile::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Empêcher scroll quand menu ouvert */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* -----------------------------------------
    3. NAVIGATION LATÉRALE (SIDE NAV)
    ----------------------------------------- */
 .side-nav {
@@ -993,21 +1099,21 @@ nav a:hover {
    ========================================= */
 
 /* -----------------------------------------
-   Grande tablette / Petit écran (max 1024px)
+   Écran moyen (max 1280px)
    ----------------------------------------- */
-@media (max-width: 1024px) {
-    /* Header - Réduction des espacements */
+@media (max-width: 1280px) {
+    /* Header - Première réduction */
     header {
-        padding: 12px 25px;
+        padding: 12px 30px;
     }
     
     .logo {
-        width: 65px;
-        height: 65px;
+        width: 70px;
+        height: 70px;
     }
     
     nav {
-        gap: 25px;
+        gap: 30px;
     }
     
     nav a {
@@ -1016,7 +1122,69 @@ nav a:hover {
     }
     
     .search-bar {
-        width: 180px;
+        width: 160px;
+        padding: 7px 18px;
+        font-size: 0.9rem;
+    }
+}
+
+/* -----------------------------------------
+   Petit écran (max 1150px)
+   ----------------------------------------- */
+@media (max-width: 1150px) {
+    /* Header - Réduction plus importante */
+    header {
+        padding: 10px 25px;
+    }
+    
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    nav {
+        gap: 20px;
+    }
+    
+    nav a {
+        font-size: 0.82rem;
+        letter-spacing: 0;
+    }
+    
+    .search-bar {
+        width: 140px;
+        padding: 6px 15px;
+        font-size: 0.85rem;
+    }
+}
+
+/* -----------------------------------------
+   Grande tablette / Petit écran (max 1024px)
+   ----------------------------------------- */
+@media (max-width: 1024px) {
+    /* Header - Réduction des espacements */
+    header {
+        padding: 10px 20px;
+    }
+    
+    .logo {
+        width: 55px;
+        height: 55px;
+    }
+    
+    nav {
+        gap: 15px;
+    }
+    
+    nav a {
+        font-size: 0.75rem;
+        letter-spacing: 0;
+    }
+    
+    .search-bar {
+        width: 120px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
     
     /* Hero */
@@ -1097,7 +1265,7 @@ nav a:hover {
 }
 
 /* -----------------------------------------
-   Tablette (max 900px)
+   Tablette (max 900px) - Menu Burger
    ----------------------------------------- */
 @media (max-width: 900px) {
     /* Header */
@@ -1110,13 +1278,71 @@ nav a:hover {
         height: 55px;
     }
     
+    /* Cacher la barre de recherche desktop */
+    .search-bar-desktop {
+        display: none;
+    }
+    
+    /* Afficher le burger */
+    .burger-menu {
+        display: flex;
+    }
+    
+    /* Afficher le bouton burger même quand actif (on utilise le X dans le menu) */
+    .burger-menu.active {
+        display: flex;
+        visibility: hidden;
+    }
+    
+    /* Bouton fermer visible dans le menu */
+    .nav-close {
+        display: block;
+    }
+    
+    /* Barre de recherche dans le menu */
+    .nav-search {
+        display: block;
+        padding: 20px 25px;
+    }
+    
+    /* Menu navigation - caché par défaut, slide depuis la droite */
     nav {
-        gap: 15px;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100vh;
+        background: linear-gradient(180deg, rgba(10, 14, 22, 0.98) 0%, rgba(15, 23, 34, 0.98) 100%);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 70px;
+        gap: 0;
+        transition: right 0.3s ease;
+        border-left: 1px solid rgba(212, 175, 55, 0.3);
+        box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        overflow-x: hidden;
+    }
+    
+    /* Menu ouvert */
+    nav.active {
+        right: 0;
     }
     
     nav a {
-        font-size: 0.8rem;
-        letter-spacing: 0;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+        padding: 18px 40px;
+        width: 100%;
+        text-align: center;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        transition: background 0.3s, color 0.3s;
+        box-sizing: border-box;
+    }
+    
+    nav a:hover {
+        background: rgba(212, 175, 55, 0.1);
     }
     
     .search-bar {
@@ -1270,15 +1496,42 @@ nav a:hover {
 }
 
 /* -----------------------------------------
+   iPad Pro / Grande tablette (max 820px)
+   ----------------------------------------- */
+@media (max-width: 820px) {
+    /* Menu réduit pour iPad Pro */
+    nav {
+        width: 260px;
+    }
+    
+    .nav-search {
+        padding: 18px 20px;
+    }
+    
+    .search-bar-mobile {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+    
+    nav a {
+        font-size: 1rem;
+        padding: 16px 25px;
+    }
+    
+    .nav-close {
+        top: 18px;
+        right: 18px;
+    }
+}
+
+/* -----------------------------------------
    Petite tablette (max 768px)
    ----------------------------------------- */
 @media (max-width: 768px) {
     /* Header - Mode compact */
     header {
         padding: 10px 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
+        justify-content: space-between;
     }
     
     .logo {
@@ -1286,28 +1539,36 @@ nav a:hover {
         height: 50px;
     }
     
+    /* Menu slide - plein écran sur petite tablette */
     nav {
         width: 100%;
-        justify-content: center;
-        gap: 12px;
-        order: 2;
-        flex-wrap: wrap;
+        padding-top: 70px;
+    }
+    
+    .nav-search {
+        padding: 15px 20px;
+    }
+    
+    .search-bar-mobile {
+        padding: 12px 18px;
+        font-size: 1rem;
     }
     
     nav a {
-        font-size: 0.75rem;
-        padding: 5px 8px;
+        font-size: 1.1rem;
+        padding: 18px 30px;
     }
     
-    .search-bar {
-        width: 100%;
-        order: 3;
-        margin-top: 5px;
+    .nav-close {
+        top: 15px;
+        right: 20px;
+        width: 42px;
+        height: 42px;
     }
     
     /* Main */
     main {
-        margin-top: 120px;
+        margin-top: 80px;
     }
     
     /* Hero */
@@ -1419,23 +1680,56 @@ nav a:hover {
     /* Header mobile */
     header {
         padding: 10px 15px;
-        flex-wrap: wrap;
-        gap: 10px;
+        justify-content: space-between;
     }
     
     .logo {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
     }
     
+    /* Burger menu ajusté */
+    .burger-menu {
+        width: 28px;
+        height: 22px;
+    }
+    
+    .burger-line {
+        height: 2px;
+    }
+    
+    /* Menu plein écran sur mobile */
     nav {
-        display: none;
+        width: 100%;
+        padding-top: 55px;
     }
     
-    .search-bar {
-        width: 100%;
-        order: 3;
-        margin-top: 5px;
+    /* Bouton fermer sur mobile */
+    .nav-close {
+        top: 12px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .close-line {
+        width: 28px;
+        height: 2px;
+    }
+    
+    /* Recherche mobile - ajustée pour ne pas dépasser */
+    .nav-search {
+        padding: 12px 15px 20px;
+    }
+    
+    .search-bar-mobile {
+        padding: 12px 16px;
+        font-size: 1rem;
+    }
+    
+    nav a {
+        font-size: 1.1rem;
+        padding: 18px 25px;
     }
     
     /* Main */
@@ -1448,7 +1742,7 @@ nav a:hover {
         min-height: 350px;
         padding: 60px 15px;
         padding-top: 100px;
-        margin-top: 110px;
+        margin-top: 0;
     }
     
     .hero .section-titre {
