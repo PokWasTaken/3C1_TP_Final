@@ -989,8 +989,112 @@ nav a:hover {
 }
 
 /* =========================================
-   11. RESPONSIVE MOBILE
+   11. RESPONSIVE TABLETTE & MOBILE
    ========================================= */
+
+/* -----------------------------------------
+   Grande tablette / Petit écran (max 1024px)
+   ----------------------------------------- */
+@media (max-width: 1024px) {
+    /* Header - Réduction des espacements */
+    header {
+        padding: 12px 25px;
+    }
+    
+    .logo {
+        width: 65px;
+        height: 65px;
+    }
+    
+    nav {
+        gap: 25px;
+    }
+    
+    nav a {
+        font-size: 0.9rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .search-bar {
+        width: 180px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 450px;
+        padding: 100px 25px;
+        padding-top: 140px;
+    }
+    
+    .hero .section-titre {
+        font-size: 3rem;
+    }
+    
+    .hero-sous-tire {
+        font-size: 1.4rem;
+    }
+    
+    /* Champion à la une - Grille adaptée */
+    .Yasuo-une-carte {
+        grid-template-columns: 35% 65%;
+    }
+    
+    .champion-info {
+        padding: 30px;
+    }
+    
+    .champion-name {
+        font-size: 1.8rem;
+    }
+    
+    .champion-description {
+        font-size: 0.95rem;
+    }
+    
+    /* Tier List */
+    .tier-champion-icon {
+        width: 55px;
+        height: 55px;
+    }
+    
+    /* Meta - 3 colonnes maintenues mais plus compactes */
+    .meta-conteneur {
+        gap: 20px;
+    }
+    
+    .meta-carte {
+        padding: 20px;
+    }
+    
+    .meta-carte-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    /* Champions Grid - 3 colonnes */
+    .champions-grid-conteneur {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .champion-carte-image {
+        height: 180px;
+    }
+    
+    /* Patch Notes */
+    .patch-item {
+        padding: 20px;
+    }
+    
+    /* Side nav */
+    .side-nav {
+        padding: 15px 8px;
+    }
+    
+    .side-nav a {
+        font-size: 0.75rem;
+        padding: 10px 12px;
+    }
+}
 
 /* -----------------------------------------
    Tablette (max 900px)
@@ -1002,27 +1106,35 @@ nav a:hover {
     }
     
     .logo {
-        width: 60px;
-        height: 60px;
+        width: 55px;
+        height: 55px;
     }
     
     nav {
-        gap: 20px;
+        gap: 15px;
     }
     
     nav a {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        letter-spacing: 0;
     }
     
     .search-bar {
-        width: 150px;
+        width: 140px;
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Main */
+    main {
+        margin-top: 80px;
     }
     
     /* Hero */
     .hero {
-        min-height: 400px;
-        padding: 80px 15px;
-        padding-top: 120px;
+        min-height: 380px;
+        padding: 70px 20px;
+        padding-top: 110px;
     }
     
     .hero .section-titre {
@@ -1030,25 +1142,273 @@ nav a:hover {
     }
     
     .hero-sous-tire {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
     
     .hero-sous-titre {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
-    /* Champion à la une */
+    /* Sections - Marges réduites */
+    .a-la-une,
+    .tier-list,
+    .meta,
+    .champions-grid,
+    .patch-notes {
+        margin: 60px auto;
+        padding: 0 20px;
+    }
+    
+    /* Titres de section */
+    .a-la-une-titre,
+    .tier-list-titre,
+    .meta-titre,
+    .champions-grid-titre,
+    .patch-notes .section-title {
+        font-size: 1.7rem;
+        margin-bottom: 30px;
+    }
+    
+    /* Champion à la une - Passage en colonne */
     .Yasuo-une-carte {
         grid-template-columns: 1fr;
     }
     
     .champion-image {
-        height: 250px;
+        height: 280px;
+    }
+    
+    .champion-info {
+        padding: 25px;
+    }
+    
+    .champion-name {
+        font-size: 1.6rem;
+    }
+    
+    .champion-stats {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+    }
+    
+    /* Tier List */
+    .tier-row {
+        min-height: 70px;
+    }
+    
+    .tier-label {
+        font-size: 2.2rem;
+    }
+    
+    .tier-champion-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Meta - 2 colonnes */
+    .meta-conteneur {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .meta-carte {
+        padding: 20px;
+    }
+    
+    .meta-item {
+        grid-template-columns: 40px 1fr auto;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    .meta-champion-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .meta-value {
+        font-size: 1rem;
+    }
+    
+    /* Champions Grid - 2 colonnes */
+    .champions-grid-conteneur {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .champion-carte-image {
+        height: 170px;
+    }
+    
+    .champion-carte-nom {
+        font-size: 1.1rem;
+    }
+    
+    /* Patch Notes */
+    .patch-item {
+        padding: 18px;
+    }
+    
+    .patch-header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .patch-details {
+        font-size: 0.95rem;
     }
     
     /* Side nav - cacher sur tablette */
     .side-nav {
         display: none;
+    }
+    
+    /* Voir tous */
+    .voir-tous {
+        font-size: 1.1rem;
+    }
+}
+
+/* -----------------------------------------
+   Petite tablette (max 768px)
+   ----------------------------------------- */
+@media (max-width: 768px) {
+    /* Header - Mode compact */
+    header {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    nav {
+        width: 100%;
+        justify-content: center;
+        gap: 12px;
+        order: 2;
+        flex-wrap: wrap;
+    }
+    
+    nav a {
+        font-size: 0.75rem;
+        padding: 5px 8px;
+    }
+    
+    .search-bar {
+        width: 100%;
+        order: 3;
+        margin-top: 5px;
+    }
+    
+    /* Main */
+    main {
+        margin-top: 120px;
+    }
+    
+    /* Hero */
+    .hero {
+        min-height: 350px;
+        padding: 60px 15px;
+        padding-top: 80px;
+        margin-top: -30px;
+    }
+    
+    .hero .section-titre {
+        font-size: 2.2rem;
+    }
+    
+    .hero-sous-tire {
+        font-size: 1.1rem;
+    }
+    
+    .hero-sous-titre {
+        font-size: 0.9rem;
+    }
+    
+    /* Champion à la une */
+    .champion-image {
+        height: 220px;
+    }
+    
+    .champion-info {
+        padding: 20px;
+    }
+    
+    .champion-name {
+        font-size: 1.5rem;
+    }
+    
+    .champion-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .champion-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .stat-item {
+        padding: 12px;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    .stat-value {
+        font-size: 1rem;
+    }
+    
+    /* Tier List */
+    .tier-row {
+        grid-template-columns: 60px 1fr;
+        min-height: 65px;
+    }
+    
+    .tier-label {
+        font-size: 2rem;
+    }
+    
+    .tier-champion-icon {
+        width: 45px;
+        height: 45px;
+    }
+    
+    /* Meta - 1 colonne sur petite tablette */
+    .meta-conteneur {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .meta-carte {
+        padding: 20px;
+    }
+    
+    /* Champions Grid - 2 colonnes maintenues */
+    .champions-grid-conteneur {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .champion-carte-image {
+        height: 160px;
+    }
+    
+    /* Patch Notes */
+    .patch-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .patch-nom {
+        align-self: flex-start;
     }
 }
 
