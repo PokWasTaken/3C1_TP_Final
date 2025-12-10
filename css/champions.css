@@ -99,11 +99,26 @@ nav a {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: color 0.3s, text-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Icônes SVG dans la navigation */
+.nav-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    display: none; /* Caché par défaut sur desktop */
 }
 
 nav a:hover {
     color: #ffd700;
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+nav a:hover .nav-icon {
+    filter: drop-shadow(0 0 4px rgba(212, 175, 55, 0.5));
 }
 
 /* Barre de recherche */
@@ -291,6 +306,56 @@ body.menu-open {
 }
 
 /* -----------------------------------------
+   EN-TÊTES DE SECTION (Icône + Titre)
+   ----------------------------------------- */
+.section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+/* Effet hover sur le header de section */
+.section-header:hover {
+    transform: scale(1.02);
+}
+
+.section-header:hover .section-icon {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+}
+
+.section-header:hover h2 {
+    text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+/* Effet click (active) */
+.section-header:active {
+    transform: scale(0.98);
+}
+
+.section-header:active .section-icon {
+    transform: scale(0.95);
+}
+
+.section-icon {
+    width: 40px;
+    height: 40px;
+    color: #d4af37;
+    opacity: 0.8;
+    transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+
+.section-header h2 {
+    margin: 0;
+    transition: text-shadow 0.3s;
+}
+
+/* -----------------------------------------
    4. SECTION HERO (BANNIÈRE PRINCIPALE)
    ----------------------------------------- */
 .hero {
@@ -361,7 +426,6 @@ body.menu-open {
     color: #d4af37;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -477,7 +541,6 @@ body.menu-open {
     color: #d4af37;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -582,7 +645,6 @@ body.menu-open {
     color: #d4af37;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -620,8 +682,12 @@ body.menu-open {
     border-bottom: 1px solid #2a3a4a;
 }
 
+/* Icône SVG dans l'en-tête meta */
 .meta-icon {
-    font-size: 1.5rem;
+    width: 28px;
+    height: 28px;
+    color: #d4af37;
+    flex-shrink: 0;
 }
 
 .meta-carte-header h3 {
@@ -763,7 +829,6 @@ body.menu-open {
     color: #d4af37;
     font-size: 2rem;
     text-align: center;
-    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -935,7 +1000,6 @@ body.menu-open {
     font-size: 2rem;
     color: #d4af37;
     text-align: center;
-    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -1335,10 +1399,18 @@ body.menu-open {
         letter-spacing: 1px;
         padding: 18px 40px;
         width: 100%;
-        text-align: center;
+        text-align: left;
         border-bottom: 1px solid rgba(212, 175, 55, 0.1);
         transition: background 0.3s, color 0.3s;
         box-sizing: border-box;
+        justify-content: flex-start;
+    }
+    
+    /* Afficher les icônes dans le menu burger */
+    .nav-icon {
+        display: block;
+        width: 22px;
+        height: 22px;
     }
     
     nav a:hover {
