@@ -1,1 +1,2107 @@
-/* Esports Page Styles */
+/*Alexandre Leblanc*/
+
+/* =========================================
+   PAGE ESPORT - STYLES CSS
+   ========================================= */
+
+.txt-ffffff {
+    color: #fff;
+}
+.txt-9933CC {
+    color: #93c;
+}
+.txt-a5a5a5 {
+    color: #a5a5a5;
+}
+.txt-e3e3e3 {
+    color: #e3e3e3;
+}
+.txt-d6d6d6 {
+    color: #d6d6d6;
+}
+.txt-e6b553 {
+    color: #e6b553;
+}
+.txt-000000 {
+    color: #000;
+}
+.cinzel {
+    font-family: 'Cinzel', serif;
+}
+.lato {
+    font-family: 'Lato', sans-serif;
+}
+
+/* -----------------------------------------
+   1. STYLES GÉNÉRAUX
+   ----------------------------------------- */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0e16;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenu principal - ajustement pour l'en-tête fixe */
+main {
+    margin-top: 90px;
+}
+
+header {
+    background: linear-gradient(180deg, rgba(10, 14, 22, 0.95) 0%, rgba(10, 14, 22, 0.85) 100%);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+}
+
+.logo:active {
+    transform: scale(0.95);
+}
+
+/* Liens de navigation */
+nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+nav a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* Menu Burger */
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-toggle .material-icons {
+    color: #d4af37;
+    font-size: 32px;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover .material-icons {
+    color: #ffd700;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 14, 22, 0.95);
+    z-index: 999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-menu-overlay.active {
+    display: flex;
+}
+
+.mobile-menu-overlay nav {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.mobile-menu-overlay nav a {
+    font-size: 1.5rem;
+}
+
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.menu-close .material-icons {
+    color: #d4af37;
+    font-size: 32px;
+}
+
+.menu-close:hover .material-icons {
+    color: #ffd700;
+}
+
+/* Barre de recherche */
+.search-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 8px 20px;
+    color: #fff;
+    outline: none;
+}
+
+.liens {
+    text-align: center;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.liens:hover {
+    color: #ffd700;
+}
+
+.section-3,
+.section-4,
+.section-5,
+footer {
+    margin-top: 200px;
+}
+
+.section-2,
+.section-3,
+.section-4,
+.section-5 {
+    scroll-margin-top: 110px;
+}
+
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #0a0e16;
+    border: 1px solid #e6b553;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+#scrollToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTop:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(230, 181, 83, 0.3);
+}
+
+#scrollToTop .material-icons {
+    color: #e6b553;
+    font-size: 24px;
+}
+
+/* -----------------------------------------
+   3. NAVIGATION LATÉRALE (SIDE NAV)
+   ----------------------------------------- */
+.side-nav {
+    position: fixed;
+    left: 0;
+    top: 120px;
+    background: linear-gradient(135deg, rgba(26, 35, 50, 0.95) 0%, rgba(15, 23, 34, 0.95) 100%);
+    padding: 30px 20px;
+    border-radius: 0 12px 12px 0;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-left: none;
+    z-index: 500;
+    transform: translateX(-85%);
+    transition: transform 0.3s ease;
+}
+
+.side-nav:hover {
+    transform: translateX(0);
+}
+
+/* Indicateur visuel pour montrer que le menu est là */
+.side-nav::after {
+    content: '›';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #d4af37;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.side-nav:hover::after {
+    opacity: 0;
+}
+
+.side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-nav li {
+    margin-bottom: 20px;
+}
+
+.side-nav a {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+    display: block;
+    padding: 10px;
+    white-space: nowrap;
+}
+
+.side-nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    transform: translateX(5px);
+}
+
+.side-nav .btn-nav a {
+    transition: color 0.3s, transform 0.3s;
+}
+
+.side-nav .btn-nav a:hover {
+    color: #ffd700;
+    transform: translateX(5px);
+}
+
+.side-nav .btn-nav a.active {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+/* -----------------------------------------
+   4. SECTION 1 (BANNIÈRE PRINCIPALE)
+   ----------------------------------------- */
+.section-1 {
+    background: 
+        linear-gradient(180deg, 
+            rgba(10, 14, 22, 0) 0%, 
+            rgba(10, 14, 22, 0.2) 20%,
+            rgba(10, 14, 22, 0.6) 40%,
+            rgba(10, 14, 22, 0.9) 80%,
+            rgba(10, 14, 22, 1) 100%
+        ), 
+        url('../img/banners/EsportHero.png') center 60%/cover no-repeat;
+    min-height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+}
+
+.section-1 .titre-page {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.section-1 .titre-page,
+.section-1 .titre-page span {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-1 .titre-page span {
+    color: #d6d6d6;
+}
+
+.section-1 .sous-titre {
+    font-size: 1.8rem;
+    font-weight: 300;
+    max-width: 700px;
+}
+
+/* -----------------------------------------
+   4. SECTION 2 (COMPÉTITIONS)
+   ----------------------------------------- */
+
+.section-2 .icone,
+.section-2 .titre-page,
+.section-2 .sous-titre {
+    display: flex;
+    justify-content: center;
+}
+
+.section-2 .icone {
+    font-size: 40px;
+}
+
+.section-2 .titre-page {
+    letter-spacing: 1px;
+}
+
+.section-2 .sous-titre {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.section-2 .carte {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+.section-2 .carte-world:hover,
+.section-2 .carte-lec-winter:hover,
+.section-2 .carte-msi:hover,
+.section-2 .carte-lck-spring:hover,
+.section-2 .carte-lpl-summer:hover,
+.section-2 .carte-lcp-summer:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    cursor: pointer;
+}
+
+/* ************************** */
+
+.section-2 .carte-world {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2 .carte-world .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-2 .carte .carte-world h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-2 .carte .carte-world .pastille p {
+    background-color: #fe0000;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-2 .carte-world .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-2 .carte-world .lieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-2 .carte-world .prix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* ************************** */
+.section-2 .carte-lec-winter {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2 .carte-lec-winter .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-2 .carte .carte-lec-winter h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-2 .carte .carte-lec-winter .pastille p {
+    background-color: #FFC105;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-2 .carte-lec-winter .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-2 .carte-lec-winter .lieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-2 .carte-lec-winter .prix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* ************************** */
+.section-2 .carte-msi {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2 .carte-msi .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-2 .carte .carte-msi h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-2 .carte .carte-msi .pastille p {
+    background-color: #224281;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-2 .carte-msi .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-2 .carte-msi .lieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-2 .carte-msi .prix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* ************************** */
+.section-2 .carte-lck-spring {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2 .carte-lck-spring .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-2 .carte .carte-lck-spring h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-2 .carte .carte-lck-spring .pastille p {
+    background-color: #224281;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-2 .carte-lck-spring .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-2 .carte-lck-spring .lieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-2 .carte-lck-spring .prix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* ************************** */
+.section-2 .carte-lpl-summer {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2 .carte-lpl-summer .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-2 .carte .carte-lpl-summer h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-2 .carte .carte-lpl-summer .pastille p {
+    background-color: #224281;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-2 .carte-lpl-summer .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-2 .carte-lpl-summer .lieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-2 .carte-lpl-summer .prix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+/* ************************** */
+.section-2 .carte-lcp-summer {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-2 .carte-lcp-summer .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-2 .carte .carte-lcp-summer h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-2 .carte .carte-lcp-summer .pastille p {
+    background-color: #224281;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-2 .carte-lcp-summer .date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.section-2 .carte-lcp-summer .lieu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-2 .carte-lcp-summer .prix {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+/* -----------------------------------------
+   4. SECTION 3 (JOUEURS)
+   ----------------------------------------- */
+
+.section-3 .icone,
+.section-3 .titre-page,
+.section-3 .sous-titre {
+    display: flex;
+    justify-content: center;
+}
+
+.section-3 .icone {
+    font-size: 40px;
+}
+
+.section-3 .titre-page {
+    letter-spacing: 1px;
+}
+
+.section-3 .sous-titre {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.section-3 .carte {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+.section-3 .carte-faker:hover,
+.section-3 .carte-zeus:hover,
+.section-3 .carte-chovy:hover,
+.section-3 .carte-ruler:hover,
+.section-3 .carte-knight:hover,
+.section-3 .carte-caps:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    cursor: pointer;
+}
+
+/***************************************************************/
+
+.section-3 .carte-faker {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3 .carte-faker .ligne-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-3 .carte .carte-faker h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-3 .carte .carte-faker .pastille-role p {
+    background-color: transparent;
+    border: 1px solid #e6b553;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte .carte-faker .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte-faker .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.section-3 .carte-faker .region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-3 .carte-faker .recompense {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/****************************************************/
+
+.section-3 .carte-zeus {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3 .carte-zeus .ligne-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-3 .carte .carte-zeus h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-3 .carte .carte-zeus .pastille-role p {
+    background-color: transparent;
+    border: 1px solid #e6b553;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte .carte-zeus .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte-zeus .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.section-3 .carte-zeus .region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-3 .carte-zeus .recompense {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/****************************************************/
+
+.section-3 .carte-chovy {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3 .carte-chovy .ligne-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-3 .carte .carte-chovy h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-3 .carte .carte-chovy .pastille-role p {
+    background-color: transparent;
+    border: 1px solid #e6b553;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte .carte-chovy .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte-chovy .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.section-3 .carte-chovy .region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-3 .carte-chovy .recompense {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/****************************************************/
+
+.section-3 .carte-ruler {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3 .carte-ruler .ligne-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-3 .carte .carte-ruler h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-3 .carte .carte-ruler .pastille-role p {
+    background-color: transparent;
+    border: 1px solid #e6b553;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte .carte-ruler .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte-ruler .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.section-3 .carte-ruler .region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-3 .carte-ruler .recompense {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/****************************************************/
+
+.section-3 .carte-knight {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3 .carte-knight .ligne-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-3 .carte .carte-knight h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-3 .carte .carte-knight .pastille-role p {
+    background-color: transparent;
+    border: 1px solid #e6b553;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte .carte-knight .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte-knight .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.section-3 .carte-knight .region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-3 .carte-knight .recompense {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/****************************************************/
+
+.section-3 .carte-caps {
+    background: linear-gradient(135deg, #1a2332 0%, #0f1722 100%);
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 175px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section-3 .carte-caps .ligne-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-3 .carte .carte-caps h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.section-3 .carte .carte-caps .pastille-role p {
+    background-color: transparent;
+    border: 1px solid #e6b553;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte .carte-caps .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-3 .carte-caps .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.section-3 .carte-caps .region {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.section-3 .carte-caps .recompense {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* -----------------------------------------
+   4. SECTION 4 (ÉQUIPES)
+   ----------------------------------------- */
+
+.section-4 .icone,
+.section-4 .titre-page,
+.section-4 .sous-titre {
+    display: flex;
+    justify-content: center;
+}
+
+.section-4 .icone {
+    font-size: 40px;
+}
+
+.section-4 .titre-page {
+    letter-spacing: 1px;
+}
+
+.section-4 .sous-titre {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.section-4 .carte {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly; 
+}
+
+.section-4 .contenu {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-4 .contenu h1 {
+    font-size: 24px;
+}
+
+.section-4 .pastille p {
+    background-color: #203E79;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-4 .carte-t1:hover,
+.section-4 .carte-geng:hover,
+.section-4 .carte-g2:hover,
+.section-4 .carte-edg:hover {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+    cursor: pointer;
+}
+
+/****************************************************/
+
+.section-4 .carte-t1 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+    height: 125px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.section-4 .carte-t1 .trophes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/****************************************************/
+
+.section-4 .carte-geng {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+    height: 125px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.section-4 .carte-geng .trophes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/****************************************************/
+
+.section-4 .carte-g2 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+    height: 125px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.section-4 .carte-g2 .trophes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/****************************************************/
+
+.section-4 .carte-edg {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 250px;
+    height: 125px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.section-4 .carte-edg .trophes {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* -----------------------------------------
+   4. SECTION 5 (NOUVELLES)
+   ----------------------------------------- */
+
+.section-5 .icone,
+.section-5 .titre-page,
+.section-5 .sous-titre {
+    display: flex;
+    justify-content: center;
+}
+
+.section-5 .icone {
+    font-size: 40px;
+}
+
+.section-5 .titre-page {
+    letter-spacing: 1px;
+}
+
+.section-5 .sous-titre {
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.section-5 .carte {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    align-items: flex-start;
+}
+
+.section-5 .carte .pastille-news p {
+    background-color: transparent;
+    border: 1px solid #93c;
+    padding: 5px 15px;
+    font-size: 12px;
+    border-radius: 50px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.section-5 .carte .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-5 .carte .date-publication {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-5 .carte .texte {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-5 .carte .texte h1 {
+    font-size: 20px;
+}
+
+.section-5 .carte .texte h2 {
+    font-size: 14px;
+}
+
+.section-5 .carte .liens {
+    display: flex;
+    margin-top: auto;
+    margin-left: 20px;
+    color: #93c;
+    font-weight: 500;
+    padding-bottom: 10px;
+}
+
+.section-5 .liens:hover {
+    color: rgb(184, 61, 246);
+}
+
+.section-5 .carte .material-icons {
+    font-size: 18px;
+}
+
+.section-5 .carte .date-publication p {
+    font-size: 15px;
+}
+
+.section-5 .liens {
+    color: #93c;
+}
+
+.section-5 .carte-1:hover,
+.section-5 .carte-2:hover,
+.section-5 .carte-3:hover,
+.section-5 .carte-4:hover,
+.section-5 .carte-5:hover,
+.section-5 .carte-6:hover{
+    opacity: 1;
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 8px rgba(183, 55, 212, 0.6));
+}
+
+/****************************************************/
+
+.section-5 .carte-1 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 260px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/****************************************************/
+
+.section-5 .carte-2 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 260px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/****************************************************/
+
+.section-5 .carte-3 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 260px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/****************************************************/
+
+.section-5 .carte-4 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 260px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/****************************************************/
+
+.section-5 .carte-5 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 260px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+/****************************************************/
+
+.section-5 .carte-6 {
+    background-color: #0a0e16;
+    border-radius: 12px;
+    border: 1px solid #2a3a4a;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 350px;
+    height: 260px;
+    padding: 10px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ========================================= */
+
+/* -----------------------------------------
+   HAMBURGER MENU STYLES (CSS ONLY)
+   ----------------------------------------- */
+
+/* Hide the checkbox */
+.menu-checkbox {
+    display: none;
+}
+
+/* Hamburger button */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+}
+
+.menu-toggle .material-icons {
+    color: #d4af37;
+    font-size: 32px;
+    transition: color 0.3s;
+}
+
+.menu-toggle:hover .material-icons {
+    color: #ffd700;
+}
+
+/* Hide hamburger when menu is open */
+.menu-checkbox:checked ~ .menu-toggle {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 14, 22, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Show menu when checkbox is checked */
+.menu-checkbox:checked ~ .mobile-menu-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Prevent body scroll when menu is open */
+body:has(.menu-checkbox:checked) {
+    overflow: hidden;
+}
+
+.mobile-menu-overlay nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+}
+
+.mobile-menu-overlay nav a {
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Animate ALL 7 links when menu opens */
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(3) {
+    transition-delay: 0.3s;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(6) {
+    transition-delay: 0.6s;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay nav a:nth-child(7) {
+    transition-delay: 0.7s;
+}
+
+/* Mobile search bar in overlay */
+.mobile-search-container {
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-checkbox:checked ~ .mobile-menu-overlay .mobile-search-container {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.8s;
+}
+
+.mobile-search-bar {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 20px;
+    padding: 12px 25px;
+    color: #fff;
+    outline: none;
+    font-size: 1rem;
+    width: 300px;
+    max-width: 80vw;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.mobile-search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.mobile-search-bar:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Close button */
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.menu-close .material-icons {
+    color: #d4af37;
+    font-size: 36px;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.menu-close:hover .material-icons {
+    color: #ffd700;
+    transform: rotate(90deg);
+}
+
+/* Hide mobile menu by default */
+.mobile-menu-overlay {
+    display: none;
+}
+
+/* Desktop nav - will be hidden on mobile */
+.desktop-nav {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.desktop-nav a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.desktop-nav a:hover {
+    color: #ffd700;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+/* -----------------------------------------
+   PROGRESSIVE NAV SHRINKING
+   ----------------------------------------- */
+
+/* Start shrinking nav at 1200px */
+@media screen and (max-width: 1200px) {
+    .desktop-nav {
+        gap: 25px;
+    }
+    
+    .desktop-nav a {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .desktop-nav {
+        gap: 20px;
+    }
+    
+    .desktop-nav a {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .desktop-nav {
+        gap: 15px;
+    }
+    
+    .desktop-nav a {
+        font-size: 0.8rem;
+    }
+}
+
+/* -----------------------------------------
+   SWITCH TO BURGER MENU AT 900px
+   ----------------------------------------- */
+@media screen and (max-width: 900px) {
+    /* Show hamburger menu */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Show mobile menu overlay */
+    .mobile-menu-overlay {
+        display: flex;
+    }
+
+    /* Hide desktop navigation */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Header adjustments */
+    header {
+        padding: 15px 20px;
+        justify-content: space-between;
+    }
+
+    /* Hide search bar */
+    .search-bar {
+        display: none;
+    }
+
+    /* Side navigation - hide */
+    .side-nav {
+        display: none;
+    }
+
+    /* Section 1 - Banner - Keep center focus, hide top/bottom */
+    .section-1 {
+        background: 
+            linear-gradient(180deg, 
+                rgba(10, 14, 22, 0) 0%, 
+                rgba(10, 14, 22, 0.2) 20%,
+                rgba(10, 14, 22, 0.6) 40%,
+                rgba(10, 14, 22, 0.9) 80%,
+                rgba(10, 14, 22, 1) 100%
+            ), 
+            url('../img/banners/EsportHero.png');
+        background-position: center 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        min-height: 500px;
+    }
+
+    .section-1 .titre-page {
+        font-size: 3rem;
+    }
+
+    .section-1 .sous-titre {
+        font-size: 1.5rem;
+    }
+
+    /* Cards - 2 columns */
+    .section-2 .carte,
+    .section-3 .carte,
+    .section-4 .carte,
+    .section-5 .carte {
+        justify-content: center;
+    }
+
+    /* Scroll to top button - slightly smaller */
+    #scrollToTop {
+        width: 45px;
+        height: 45px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+/* -----------------------------------------
+   MOBILE (max-width: 767px)
+   ----------------------------------------- */
+@media screen and (max-width: 767px) {
+    /* Header - Keep in one row with hamburger */
+    header {
+        flex-direction: row;
+        padding: 10px 15px;
+        justify-content: space-between;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* Hide desktop nav */
+    .desktop-nav {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Show mobile menu overlay */
+    .mobile-menu-overlay {
+        display: flex;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    /* Main content adjustment */
+    main {
+        margin-top: 90px;
+    }
+
+    /* Side navigation - hide completely */
+    .side-nav {
+        display: none;
+    }
+
+    /* Section 1 - Banner - Keep center focus, hide top/bottom */
+    .section-1 {
+        background: 
+            linear-gradient(180deg, 
+                rgba(10, 14, 22, 0) 0%, 
+                rgba(10, 14, 22, 0.2) 20%,
+                rgba(10, 14, 22, 0.6) 40%,
+                rgba(10, 14, 22, 0.9) 80%,
+                rgba(10, 14, 22, 1) 100%
+            ), 
+            url('../img/banners/EsportHero.png');
+        background-position: center 40%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        min-height: 400px;
+        padding: 15px;
+    }
+
+    .section-1 .titre-page {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .section-1 .sous-titre {
+        font-size: 1.2rem;
+    }
+
+    /* Section titles and icons */
+    .section-2 .icone,
+    .section-3 .icone,
+    .section-4 .icone,
+    .section-5 .icone {
+        font-size: 30px;
+    }
+
+    .section-2 .titre-page,
+    .section-3 .titre-page,
+    .section-4 .titre-page,
+    .section-5 .titre-page {
+        font-size: 1.5rem;
+    }
+
+    .section-2 .sous-titre,
+    .section-3 .sous-titre,
+    .section-4 .sous-titre,
+    .section-5 .sous-titre {
+        font-size: 1.2rem;
+        padding: 0 15px;
+        text-align: center;
+    }
+
+    /* All cards - single column, full width */
+    .section-2 .carte,
+    .section-3 .carte,
+    .section-4 .carte,
+    .section-5 .carte {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    /* Competition cards */
+    .section-2 .carte-world,
+    .section-2 .carte-lec-winter,
+    .section-2 .carte-msi,
+    .section-2 .carte-lck-spring,
+    .section-2 .carte-lpl-summer,
+    .section-2 .carte-lcp-summer {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .section-2 .carte .carte-world h1,
+    .section-2 .carte .carte-lec-winter h1,
+    .section-2 .carte .carte-msi h1,
+    .section-2 .carte .carte-lck-spring h1,
+    .section-2 .carte .carte-lpl-summer h1,
+    .section-2 .carte .carte-lcp-summer h1 {
+        font-size: 20px;
+    }
+
+    /* Player cards */
+    .section-3 .carte-faker,
+    .section-3 .carte-zeus,
+    .section-3 .carte-chovy,
+    .section-3 .carte-ruler,
+    .section-3 .carte-knight,
+    .section-3 .carte-caps {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .section-3 .carte .carte-faker h1,
+    .section-3 .carte .carte-zeus h1,
+    .section-3 .carte .carte-chovy h1,
+    .section-3 .carte .carte-ruler h1,
+    .section-3 .carte .carte-knight h1,
+    .section-3 .carte .carte-caps h1 {
+        font-size: 20px;
+    }
+
+    /* Team cards */
+    .section-4 .carte-t1,
+    .section-4 .carte-geng,
+    .section-4 .carte-g2,
+    .section-4 .carte-edg {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .section-4 .contenu h1 {
+        font-size: 20px;
+    }
+
+    /* News cards */
+    .section-5 .carte-1,
+    .section-5 .carte-2,
+    .section-5 .carte-3,
+    .section-5 .carte-4,
+    .section-5 .carte-5,
+    .section-5 .carte-6 {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        margin-top: 30px;
+        padding: 15px 20px;
+    }
+
+    .section-5 .carte .texte h1 {
+        font-size: 18px;
+    }
+
+    .section-5 .carte .texte h2 {
+        font-size: 13px;
+    }
+
+    /* Spacing adjustments */
+    .section-3,
+    .section-4,
+    .section-5,
+    footer {
+        margin-top: 100px;
+    }
+
+    /* Scroll to top button */
+    #scrollToTop {
+        width: 40px;
+        height: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    #scrollToTop .material-icons {
+        font-size: 20px;
+    }
+
+    /* Links */
+    .liens {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .section-5 .carte .liens {
+        margin-left: 10px;
+    }
+}
+
+/* -----------------------------------------
+   SMALL MOBILE (max-width: 480px)
+   ----------------------------------------- */
+@media screen and (max-width: 480px) {
+    /* Even smaller adjustments for very small phones */
+    header {
+        padding: 8px 10px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    main {
+        margin-top: 70px;
+    }
+
+    /* Section 1 - Banner - Keep center focus */
+    .section-1 {
+        background-position: center 40%;
+        background-size: cover;
+        min-height: 350px;
+    }
+
+    .section-1 .titre-page {
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .section-1 .sous-titre {
+        font-size: 1rem;
+    }
+
+    /* Mobile menu adjustments */
+    .mobile-menu-overlay nav a {
+        font-size: 1.2rem;
+    }
+
+    /* Reduce padding on all sections */
+    .section-2 .carte,
+    .section-3 .carte,
+    .section-4 .carte,
+    .section-5 .carte {
+        padding: 0 10px;
+    }
+
+    /* All cards slightly smaller */
+    .section-2 .carte-world,
+    .section-2 .carte-lec-winter,
+    .section-2 .carte-msi,
+    .section-2 .carte-lck-spring,
+    .section-2 .carte-lpl-summer,
+    .section-2 .carte-lcp-summer,
+    .section-3 .carte-faker,
+    .section-3 .carte-zeus,
+    .section-3 .carte-chovy,
+    .section-3 .carte-ruler,
+    .section-3 .carte-knight,
+    .section-3 .carte-caps {
+        padding: 15px;
+    }
+
+    .section-5 .carte-1,
+    .section-5 .carte-2,
+    .section-5 .carte-3,
+    .section-5 .carte-4,
+    .section-5 .carte-5,
+    .section-5 .carte-6 {
+        padding: 12px 15px;
+    }
+
+    .section-2 .sous-titre,
+    .section-3 .sous-titre,
+    .section-4 .sous-titre,
+    .section-5 .sous-titre {
+        font-size: 1rem;
+    }
+}

@@ -1,3 +1,5 @@
+/* Léandre NF */
+
 /* =========================================
    PAGE CHAMPIONS - STYLES CSS
    ========================================= */
@@ -82,6 +84,17 @@ header {
     width: 80px;
     height: 80px;
     object-fit: contain;
+    cursor: pointer;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.6));
+}
+
+.logo:active {
+    transform: scale(0.95);
 }
 
 /* Liens de navigation */
@@ -236,6 +249,43 @@ nav a:hover .nav-icon {
 /* Empêcher scroll quand menu ouvert */
 body.menu-open {
     overflow: hidden;
+}
+
+/* -----------------------------------------
+   BOUTON SCROLL TO TOP
+   ----------------------------------------- */
+#scrollToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #0a0e16;
+    border: 1px solid #d4af37;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+    z-index: 1000;
+}
+
+#scrollToTop.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scrollToTop:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+#scrollToTop .material-icons {
+    color: #d4af37;
+    font-size: 24px;
 }
 
 /* -----------------------------------------

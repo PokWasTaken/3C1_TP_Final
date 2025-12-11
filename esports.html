@@ -1,58 +1,629 @@
+<!-- Alexandre Leblanc -->
+
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esports - Wiki League Of Legends</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="normalize/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/esports.css">
     <script defer src="js/main.js"></script>
 </head>
+
 <body>
-    <header id="main-header"></header>
-    
-    <main>
-        <!-- Your esports content here -->
+    <header class="header-esport" id="main-header">
+        <img href="index.html" class="logo" src="img/champions/logo.png" alt="image de logo du site">
+        <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+        <label for="menu-toggle" class="menu-toggle">
+            <span class="material-icons">menu</span>
+        </label>
+        
+        <!-- Desktop navigation -->
+        <nav class="btn-nav desktop-nav">
+            <a href="#" class="cinzel txt-e6b553">Gameplay</a>
+            <a href="#" class="cinzel txt-e6b553">Univers</a>
+            <a href="champions.html" class="cinzel txt-e6b553">Champions</a>
+            <a href="esports.html" class="cinzel txt-e6b553">Esport</a>
+            <a href="#" class="cinzel txt-e6b553">Nouveautés</a>
+            <a href="#" class="cinzel txt-e6b553">À propos</a>
+            <a href="#" class="cinzel txt-e6b553">Communauté</a>
+        </nav>
+        
+        <input type="text" placeholder="Rechercher" class="search-bar lato">
+        
+        <!-- Mobile menu overlay -->
+        <div class="mobile-menu-overlay">
+            <label for="menu-toggle" class="menu-close">
+                <span class="material-icons">close</span>
+            </label>
+            <nav>
+                <a href="#" class="cinzel txt-e6b553">Gameplay</a>
+                <a href="#" class="cinzel txt-e6b553">Univers</a>
+                <a href="champions.html" class="cinzel txt-e6b553">Champions</a>
+                <a href="esports.html" class="cinzel txt-e6b553">Esport</a>
+                <a href="#" class="cinzel txt-e6b553">Nouveautés</a>
+                <a href="#" class="cinzel txt-e6b553">À propos</a>
+                <a href="#" class="cinzel txt-e6b553">Communauté</a>
+            </nav>
+            <!-- Mobile search bar -->
+            <div class="mobile-search-container">
+                <input type="text" placeholder="Rechercher" class="mobile-search-bar lato">
+            </div>
+        </div>
+    </header>
+
+    <aside class="side-nav">
+        <div class="nav-page">
+            <div class="btn-nav">
+                <a href="#section-2" class="cinzel txt-e6b553">Compétitions</a>
+                <a href="#section-3" class="cinzel txt-e6b553">Joueurs</a>
+                <a href="#section-4" class="cinzel txt-e6b553">Équipes</a>
+                <a href="#section-5" class="cinzel txt-e6b553">Nouvelles</a>
+            </div>
+        </div>
+    </aside>
+
+    <main class="main-esport">
+        <div id="section-1" class="section-1">
+            <h1 class="titre-page txt-e6b553 cinzel">LEAGUE OF LEGENDS <span>ESPORT</span></h1>
+            <h2 class="sous-titre txt-d6d6d6 lato">Bienvenue sur la destination de choix pour la compétition League of
+                Legends</h2>
+        </div>
+
+
+        <div id="section-2" class="section-2">
+            <span class="material-icons txt-e6b553 icone">emoji_events</span>
+            <h1 class="titre-page cinzel txt-d6d6d6 cinzel"><span>Compétitions</span></h1>
+            <h2 class="sous-titre txt-a5a5a5 lato">Suivez les tournois les plus prestigieux à travers le monde</h2>
+            <div class="carte">
+                <div class="carte-world">
+                    <div class="header">
+                        <h1 class="txt-e3e3e3 lato">Worlds 2025</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés ROUGE autour du texte qui est BLANC-->
+                            <p class="txt-ffffff lato">En Direct</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <span class="material-icons txt-a5a5a5">calendar_today</span>
+                        <p class="txt-a5a5a5 lato">oct - nov 2025</p>
+                    </div>
+                    <div class="lieu">
+                        <span class="material-icons txt-a5a5a5">location_on</span>
+                        <p class="txt-a5a5a5 lato">Pékin, Chine</p>
+                    </div>
+                    <div class="prix">
+                        <span class="material-icons txt-e6b553">emoji_events</span>
+                        <p class="txt-e6b553 lato">$5M de cagnotte</p>
+                    </div>
+                </div>
+
+                <div class="carte-lec-winter">
+                    <div class="header">
+                        <h1 class="txt-e3e3e3 lato">LEC Winter Split</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés JAUNE autour du texte qui est NOIR-->
+                            <p class="txt-000000 lato">À Venir</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <span class="material-icons txt-a5a5a5">calendar_today</span>
+                        <p class="txt-a5a5a5 lato">jan - mar 2026</p>
+                    </div>
+                    <div class="lieu">
+                        <span class="material-icons txt-a5a5a5">location_on</span>
+                        <p class="txt-a5a5a5 lato">Berlin, Allemagne</p>
+                    </div>
+                    <div class="prix">
+                        <span class="material-icons txt-e6b553">emoji_events</span>
+                        <p class="txt-e6b553 lato">$200K de cagnotte</p>
+                    </div>
+                </div>
+
+                <div class="carte-msi">
+                    <div class="header">
+                        <h1 class="txt-e3e3e3 lato">MSI 2025</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC-->
+                            <p class="txt-ffffff lato">Terminé</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <span class="material-icons txt-a5a5a5">calendar_today</span>
+                        <p class="txt-a5a5a5 lato">jun - jul 2025</p>
+                    </div>
+                    <div class="lieu">
+                        <span class="material-icons txt-a5a5a5">location_on</span>
+                        <p class="txt-a5a5a5 lato">Vancouver, Canada</p>
+                    </div>
+                    <div class="prix">
+                        <span class="material-icons txt-e6b553">emoji_events</span>
+                        <p class="txt-e6b553 lato">$2M de cagnotte</p>
+                    </div>
+                </div>
+
+                <div class="carte-lck-spring">
+                    <div class="header">
+                        <h1 class="txt-e3e3e3 lato">LCK Spring Split</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC-->
+                            <p class="txt-ffffff lato">Terminé</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <span class="material-icons txt-a5a5a5">calendar_today</span>
+                        <p class="txt-a5a5a5 lato">avr - jun 2025</p>
+                    </div>
+                    <div class="lieu">
+                        <span class="material-icons txt-a5a5a5">location_on</span>
+                        <p class="txt-a5a5a5 lato">Séoul, Corée du Sud</p>
+                    </div>
+                    <div class="prix">
+                        <span class="material-icons txt-e6b553">emoji_events</span>
+                        <p class="txt-e6b553 lato">$500K de cagnotte</p>
+                    </div>
+                </div>
+
+                <div class="carte-lpl-summer">
+                    <div class="header">
+                        <h1 class="txt-e3e3e3 lato">LPL Summer Split</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC-->
+                            <p class="txt-ffffff lato">Terminé</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <span class="material-icons txt-a5a5a5">calendar_today</span>
+                        <p class="txt-a5a5a5 lato">jul - sep 2025</p>
+                    </div>
+                    <div class="lieu">
+                        <span class="material-icons txt-a5a5a5">location_on</span>
+                        <p class="txt-a5a5a5 lato">Shenzhen, Chine</p>
+                    </div>
+                    <div class="prix">
+                        <span class="material-icons txt-e6b553">emoji_events</span>
+                        <p class="txt-e6b553 lato">$700K de cagnotte</p>
+                    </div>
+                </div>
+
+                <div class="carte-lcp-summer">
+                    <div class="header">
+                        <h1 class="txt-e3e3e3 lato">LCP Summer Split</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC-->
+                            <p class="txt-ffffff lato">Terminé</p>
+                        </div>
+                    </div>
+                    <div class="date">
+                        <span class="material-icons txt-a5a5a5">calendar_today</span>
+                        <p class="txt-a5a5a5 lato">jul - sep 2025</p>
+                    </div>
+                    <div class="lieu">
+                        <span class="material-icons txt-a5a5a5">location_on</span>
+                        <p class="txt-a5a5a5 lato">Taipei, Taiwan</p>
+                    </div>
+                    <div class="prix">
+                        <span class="material-icons txt-e6b553">emoji_events</span>
+                        <p class="txt-e6b553 lato">$80K de cagnotte</p>
+                    </div>
+                </div>
+            </div>
+            <h4 href="#" class="liens txt-e6b553 lato">Voir tous →</span></h4>
+        </div>
+
+
+        <div id="section-3" class="section-3">
+            <span class="material-icons txt-e6b553 icone">star_border_purple500</span>
+            <h1 class="titre-page txt-d6d6d6 cinzel"><span>Joueurs</span></h1>
+            <h2 class="sous-titre txt-a5a5a5 lato">Découvrez les légendes qui dominent la scène professionnelle</h2>
+            <div class="carte">
+                <div class="carte-faker">
+                    <div class="ligne-1">
+                        <h1 class="txt-e3e3e3 lato">Faker</h1>
+                        <div class="pastille-role">
+                            <p class="txt-ffffff lato">Mid</p>
+                        </div>
+                    </div>
+                    <div class="equipe">
+                        <p class="txt-a5a5a5 lato">Équipe :</p>
+                        <p class="txt-e3e3e3 lato">T1</p>
+                    </div>
+                    <div class="region">
+                        <p class="txt-a5a5a5 lato">Région :</p>
+                        <div class="pastille">
+                            <p class="txt-ffffff lato">LCK</p>
+                        </div>
+                    </div>
+                    <div class="recompense">
+                        <span class="material-icons txt-e6b553">workspace_premium</span>
+                        <p class="txt-e6b553 lato">5x champion des Worlds</p>
+                    </div>
+                </div>
+
+                <div class="carte-zeus">
+                    <div class="ligne-1">
+                        <h1 class="txt-e3e3e3 lato">Zeus</h1>
+                        <div class="pastille-role">
+                            <p class="txt-ffffff lato">Top</p>
+                        </div>
+                    </div>
+                    <div class="equipe">
+                        <p class="txt-a5a5a5 lato">Équipe :</p>
+                        <p class="txt-e3e3e3 lato">HLE</p>
+                    </div>
+                    <div class="region">
+                        <p class="txt-a5a5a5 lato">Région :</p>
+                        <div class="pastille">
+                            <p class="txt-ffffff lato">LCK</p>
+                        </div>
+                    </div>
+                    <div class="recompense">
+                        <span class="material-icons txt-e6b553">workspace_premium</span>
+                        <p class="txt-e6b553 lato">2x champion des Worlds</p>
+                    </div>
+                </div>
+
+                <div class="carte-chovy">
+                    <div class="ligne-1">
+                        <h1 class="txt-e3e3e3 lato">Chovy</h1>
+                        <div class="pastille-role">
+                            <p class="txt-ffffff lato">Mid</p>
+                        </div>
+                    </div>
+                    <div class="equipe">
+                        <p class="txt-a5a5a5 lato">Équipe :</p>
+                        <p class="txt-e3e3e3 lato">GenG</p>
+                    </div>
+                    <div class="region">
+                        <p class="txt-a5a5a5 lato">Région :</p>
+                        <div class="pastille">
+                            <p class="txt-ffffff lato">LCK</p>
+                        </div>
+                    </div>
+                    <div class="recompense">
+                        <span class="material-icons txt-e6b553">workspace_premium</span>
+                        <p class="txt-e6b553 lato">5x champion de la LCK</p>
+                    </div>
+                </div>
+
+                <div class="carte-ruler">
+                    <div class="ligne-1">
+                        <h1 class="txt-e3e3e3 lato">Ruler</h1>
+                        <div class="pastille-role">
+                            <p class="txt-ffffff lato">Adc</p>
+                        </div>
+                    </div>
+                    <div class="equipe">
+                        <p class="txt-a5a5a5 lato">Équipe :</p>
+                        <p class="txt-e3e3e3 lato">GenG</p>
+                    </div>
+                    <div class="region">
+                        <p class="txt-a5a5a5 lato">Région :</p>
+                        <div class="pastille">
+                            <p class="txt-ffffff lato">LCK</p>
+                        </div>
+                    </div>
+                    <div class="recompense">
+                        <span class="material-icons txt-e6b553">workspace_premium</span>
+                        <p class="txt-e6b553 lato">1x champion des Worlds</p>
+                    </div>
+                </div>
+
+                <div class="carte-knight">
+                    <div class="ligne-1">
+                        <h1 class="txt-e3e3e3 lato">Knight</h1>
+                        <div class="pastille-role">
+                            <p class="txt-ffffff lato">Mid</p>
+                        </div>
+                    </div>
+                    <div class="equipe">
+                        <p class="txt-a5a5a5 lato">Équipe :</p>
+                        <p class="txt-e3e3e3 lato">BLG</p>
+                    </div>
+                    <div class="region">
+                        <p class="txt-a5a5a5 lato">Région :</p>
+                        <div class="pastille">
+                            <p class="txt-ffffff lato">LPL</p>
+                        </div>
+                    </div>
+                    <div class="recompense">
+                        <span class="material-icons txt-e6b553">workspace_premium</span>
+                        <p class="txt-e6b553 lato">6x champion de la LPL</p>
+                    </div>
+                </div>
+
+                <div class="carte-caps">
+                    <div class="ligne-1">
+                        <h1 class="txt-e3e3e3 lato">Caps</h1>
+                        <div class="pastille-role">
+                            <p class="txt-ffffff lato">Mid</p>
+                        </div>
+                    </div>
+                    <div class="equipe">
+                        <p class="txt-a5a5a5 lato">Équipe :</p>
+                        <p class="txt-e3e3e3 lato">G2</p>
+                    </div>
+                    <div class="region">
+                        <p class="txt-a5a5a5 lato">Région :</p>
+                        <div class="pastille">
+                            <p class="txt-ffffff lato">LEC</p>
+                        </div>
+                    </div>
+                    <div class="recompense">
+                        <span class="material-icons txt-e6b553">workspace_premium</span>
+                        <p class="txt-e6b553 lato">15x champion de la LEC</p>
+                    </div>
+                </div>
+            </div>
+            <h4 href="#" class="liens txt-e6b553 lato">Voir tous →</span></h4>
+        </div>
+
+
+        <div id="section-4" class="section-4">
+            <span class="material-icons txt-e6b553 icone">groups</span>
+            <h1 class="titre-page txt-d6d6d6 cinzel"><span>Équipes</span></h1>
+            <h2 class="sous-titre txt-a5a5a5 lato">Découvrez les équipes qui dominent la scène professionnelle</h2>
+            <div class="carte">
+                <div class="carte-t1">
+                    <div class="contenu">
+                        <h1 class="txt-e3e3e3 lato">T1</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC -->
+                            <p class="txt-ffffff lato">LCK</p>
+                        </div>
+                        <div class="trophes">
+                            <span class="material-icons txt-e6b553">workspace_premium</span>
+                            <p class="txt-e6b553 lato">18 Trophées</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-geng">
+                    <div class="contenu">
+                        <h1 class="txt-e3e3e3 lato">GenG</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC -->
+                            <p class="txt-ffffff lato">LCK</p>
+                        </div>
+                        <div class="trophes">
+                            <span class="material-icons txt-e6b553">workspace_premium</span>
+                            <p class="txt-e6b553 lato">9 Trophées</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-g2">
+                    <div class="contenu">
+                        <h1 class="txt-e3e3e3 lato">G2</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC -->
+                            <p class="txt-ffffff lato">LEC</p>
+                        </div>
+                        <div class="trophes">
+                            <span class="material-icons txt-e6b553">workspace_premium</span>
+                            <p class="txt-e6b553 lato">18 Trophées</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-edg">
+                    <div class="contenu">
+                        <h1 class="txt-e3e3e3 lato">EDG</h1>
+                        <div class="pastille">
+                            <!-- Ajouter un rectangle dont les angles sont courbés BLEU autour du texte qui est BLANC -->
+                            <p class="txt-ffffff lato">LPL</p>
+                        </div>
+                        <div class="trophes">
+                            <span class="material-icons txt-e6b553">workspace_premium</span>
+                            <p class="txt-e6b553 lato">8 Trophées</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h4 href="#" class="liens txt-e6b553 lato">Voir tous →</h4>
+        </div>
+
+
+        <div id="section-5" class="section-5">
+            <span class="material-icons txt-e6b553 icone">feed</span>
+            <h1 class="titre-page txt-d6d6d6 cinzel"><span>Nouvelles</span></h1>
+            <h2 class="sous-titre txt-a5a5a5 lato">Restez informés des dernières nouvelles, des résumés de matchs et des
+                analyses approfondies</h2>
+            <div class="carte">
+                <div class="carte-1">
+                    <div class="header">
+                        <div class="pastille-news">
+                            <!-- Ajouter un rectangle dont les angles sont courbés au contour MAUVE autour du texte qui est MAUVE -->
+                            <p class="txt-9933CC lato">Roster News</p>
+                        </div>
+                        <div class="date-publication">
+                            <span class="material-icons txt-a5a5a5">access_time</span>
+                            <p class="txt-a5a5a5 lato">Il y a 2 heures</p>
+                        </div>
+                    </div>
+                    <div class="texte">
+                        <h1 class="titre-pastille txt-ffffff lato">Ouverture du marché des transferts : d'importants
+                            changements d'effectif attendus</h1>
+                        <h2 class="txt-a5a5a5 lato">Les équipes de toutes les grandes régions se préparent à d'importants
+                            remaniements alors que la période des transferts débute...</h2>
+                    </div>
+                    <h4 href="#" class="liens txt-e6b553 lato">Voir plus →</h4>
+                </div>
+
+                <div class="carte-2">
+                    <div class="header">
+                        <div class="pastille-news">
+                            <!-- Ajouter un rectangle dont les angles sont courbés au contour MAUVE autour du texte qui est MAUVE -->
+                            <p class="txt-9933CC lato">Match Recap</p>
+                        </div>
+                        <div class="date-publication">
+                            <span class="material-icons txt-a5a5a5">access_time</span>
+                            <p class="txt-a5a5a5 lato">Il y a 5 heures</p>
+                        </div>
+                    </div>
+                    <div class="texte">
+                        <h1 class="titre-pastille txt-ffffff lato">T1 domine Gen.G lors d'une finale épique de la LCK</h1>
+                        <h2 class="txt-a5a5a5 lato">Au terme d'une série palpitante en cinq manches, T1 remporte son dixième
+                            titre de la LCK grâce à une victoire renversante...</h2>
+                    </div>
+                    <h4 href="#" class="liens txt-e6b553 lato">Voir plus →</h4>
+                </div>
+
+                <div class="carte-3">
+                    <div class="header">
+                        <div class="pastille-news">
+                            <!-- Ajouter un rectangle dont les angles sont courbés au contour MAUVE autour du texte qui est MAUVE -->
+                            <p class="txt-9933CC lato">Tournoi</p>
+                        </div>
+                        <div class="date-publication">
+                            <span class="material-icons txt-a5a5a5">access_time</span>
+                            <p class="txt-a5a5a5 lato">Il y a 1 jour</p>
+                        </div>
+                    </div>
+                    <div class="texte">
+                        <h1 class="titre-pastille txt-ffffff lato">Riot Games annonce des changements de format pour les
+                            Worlds 2025</h1>
+                        <h2 class="txt-a5a5a5 lato">Riot Games dévoile d'importantes mises à jour du format du Championnat
+                            du Monde, avec l'introduction de nouvelles phases d'élimination...</h2>
+                    </div>
+                    <h4 href="#" class="liens txt-e6b553 lato">Voir plus →</h4>
+                </div>
+
+                <div class="carte-4">
+                    <div class="header">
+                        <div class="pastille-news">
+                            <!-- Ajouter un rectangle dont les angles sont courbés au contour MAUVE autour du texte qui est MAUVE -->
+                            <p class="txt-9933CC lato">Business</p>
+                        </div>
+                        <div class="date-publication">
+                            <span class="material-icons txt-a5a5a5">access_time</span>
+                            <p class="txt-a5a5a5 lato">Il y a 1 jour</p>
+                        </div>
+                    </div>
+                    <div class="texte">
+                        <h1 class="titre-pastille txt-ffffff lato">La LCS annonce un partenariat avec une grande plateforme
+                            de streaming</h1>
+                        <h2 class="txt-a5a5a5 lato">La ligue nord-américaine conclut un accord de diffusion pluriannuel qui
+                            révolutionnera la façon dont les fans regardent les compétitions de League...</h2>
+                    </div>
+                    <h4 href="#" class="liens txt-e6b553 lato">Voir plus →</h4>
+                </div>
+
+                <div class="carte-5">
+                    <div class="header">
+                        <div class="pastille-news">
+                            <!-- Ajouter un rectangle dont les angles sont courbés au contour MAUVE autour du texte qui est MAUVE -->
+                            <p class="txt-9933CC lato">Focus Joueur</p>
+                        </div>
+                        <div class="date-publication">
+                            <span class="material-icons txt-a5a5a5">access_time</span>
+                            <p class="txt-a5a5a5 lato">Il y a 2 jours</p>
+                        </div>
+                    </div>
+                    <div class="texte">
+                        <h1 class="titre-pastille txt-ffffff lato">La jeune étoile montante « Phoenix » établit de nouveaux
+                            records de recrue en LPL</h1>
+                        <h2 class="txt-a5a5a5 lato">À seulement 18 ans, la sensation bat plusieurs records de performance
+                            lors de sa première saison en LPL, suscitant des comparaisons avec les légendes...</h2>
+                    </div>
+                    <h4 href="#" class="liens txt-e6b553 lato">Voir plus →</h4>
+                </div>
+
+                <div class="carte-6">
+                    <div class="header">
+                        <div class="pastille-news">
+                            <!-- Ajouter un rectangle dont les angles sont courbés au contour MAUVE autour du texte qui est MAUVE -->
+                            <p class="txt-9933CC lato">Analyse</p>
+                        </div>
+                        <div class="date-publication">
+                            <span class="material-icons txt-a5a5a5">access_time</span>
+                            <p class="txt-a5a5a5 lato">Il y a 2 jours</p>
+                        </div>
+                    </div>
+                    <div class="texte">
+                        <h1 class="titre-pastille txt-ffffff lato">Changement de méta : comment le patch 14.8 transforme le
+                            jeu professionnel</h1>
+                        <h2 class="txt-a5a5a5 lato">Les meilleurs analystes décryptent la dernière mise à jour et ses
+                            répercussions majeures sur la méta compétitive actuelle...</h2>
+                    </div>
+                    <h4 href="#" class="liens txt-e6b553 lato">Voir plus →</h4>
+                </div>
+            </div>
+            <h4 class="liens txt-e6b553 lato">Voir tous →</h4>
+        </div>
     </main>
-    
-    <footer id="main-footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Worlds 2025</h3>
+
+
+    <footer id="footer">
+        <div class="footer-parent">
+            <div class="footer-content">
+                <h3 class="footer-titre">Compétitions</h3>
                 <ul>
-                    <li><a href="#">Présentation</a></li>
-                    <li><a href="#">Équipes qualifiées</a></li>
-                    <li><a href="#">Calendrier</a></li>
-                    <li><a href="#">Résultats</a></li>
-                    <li><a href="#">Classement</a></li>
+                    <li><a class="lien-footer" href="#">Worlds</a></li>
+                    <li><a class="lien-footer" href="#">MSI</a></li>
+                    <li><a class="lien-footer" href="#">Ligues régionales</a></li>
+                    <li><a class="lien-footer" href="#">Calendrier</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Médias</h3>
+            <div class="footer-content">
+                <h3 class="footer-titre">Joueurs et équipes</h3>
                 <ul>
-                    <li><a href="#">Highlights</a></li>
-                    <li><a href="#">Interviews</a></li>
-                    <li><a href="#">Galerie photo</a></li>
-                    <li><a href="#">Vidéos officielles</a></li>
+                    <li><a class="lien-footer" href="#">Toutes les équipes</a></li>
+                    <li><a class="lien-footer" href="#">Classement des joueurs</a></li>
+                    <li><a class="lien-footer" href="#">Transferts</a></li>
+                    <li><a class="lien-footer" href="#">Statistiques</a></li>
                 </ul>
             </div>
-            <div class="footer-section">
-                <h3>Informations</h3>
+            <div class="footer-content">
+                <h3 class="footer-titre">Plus</h3>
                 <ul>
-                    <li><a href="#">À propos</a></li>
-                    <li><a href="#">Règlement</a></li>
-                    <li><a href="#">Billetterie</a></li>
-                    <li><a href="#">Partenaires officiels</a></li>
+                    <li><a class="lien-footer" href="#">Actualités</a></li>
+                    <li><a class="lien-footer" href="#">Vidéos</a></li>
+                    <li><a class="lien-footer" href="#">À propos</a></li>
+                    <li><a class="lien-footer" href="#">Contact</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 LeagueOfLegendsWiki. Tous droits réservés.</p>
+            <p class="txt-a5a5a5 cinzel">&copy; 2025 LeagueOfLegendsWiki. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+    <!-- SEULEMENT POUR LE BOUTON QUI EST JUSTE EN HAUT (valait pas la peine de faire un fichier JS juste pour ça) -->
+     <!-- À déplacer dans le fichier JS si on utilise d'autre JS -->
+    <script> 
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Show button after scrolling 300px
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll to top
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
 </body>
+
 </html>

@@ -1,3 +1,5 @@
+<!-- Léandre NF -->
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -13,6 +15,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
+    
+    <!-- ===== MATERIAL ICONS ===== -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
     <!-- ===== FEUILLES DE STYLE ===== -->
     <link rel="stylesheet" href="normalize/normalize.css">  <!-- Reset CSS -->
@@ -621,6 +626,33 @@
             <p>&copy; 2025 LeagueOfLegendsWiki. Tous droits réservés.</p>
         </div>
     </footer>
+
+    <!-- Bouton Scroll to Top -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <span class="material-icons">arrow_upward</span>
+    </button>
+
+    <!-- Script pour le bouton scroll to top -->
+    <script> 
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+
+        // Afficher le bouton après 300px de scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Smooth scroll vers le haut
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 
 </html>
